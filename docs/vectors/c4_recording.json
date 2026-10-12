@@ -1,0 +1,139 @@
+{
+ "run": "c2audio",
+ "render": "out/audio/render.npz",
+ "hop_ms": 10.0,
+ "window": 2048,
+ "offset": {
+  "frames": 260,
+  "seconds": 2.6,
+  "envelope_corr": 0.8981
+ },
+ "mapping": {
+  "L": {
+   "bin0": 0.048806337042043346,
+   "bin1": 0.0,
+   "bin11": 0.0,
+   "residual_rel": 0.8230038630793646
+  },
+  "R": {
+   "bin0": 0.04852040096419262,
+   "bin1": 0.0,
+   "bin11": 0.0,
+   "residual_rel": 0.8229998275036555
+  }
+ },
+ "components": {
+  "0": {
+   "mask_cells": 31642,
+   "frames": [
+    84,
+    627
+   ],
+   "corr_at_0": 0.9259,
+   "best_shift_ms": 110.0,
+   "corr_best": 0.9497,
+   "level_db_vs_global": 2.08
+  },
+  "1": {
+   "mask_cells": 12555,
+   "frames": [
+    0,
+    454
+   ],
+   "corr_at_0": 0.845,
+   "best_shift_ms": -10.0,
+   "corr_best": 0.849,
+   "level_db_vs_global": 2.46
+  },
+  "2": {
+   "mask_cells": 2961,
+   "frames": [
+    80,
+    785
+   ],
+   "corr_at_0": 0.9717,
+   "best_shift_ms": 0.0,
+   "corr_best": 0.9717,
+   "level_db_vs_global": 4.37
+  },
+  "3": {
+   "mask_cells": 67444,
+   "frames": [
+    78,
+    734
+   ],
+   "corr_at_0": 0.7829,
+   "best_shift_ms": 30.0,
+   "corr_best": 0.7907,
+   "level_db_vs_global": 3.01
+  },
+  "4": {
+   "mask_cells": 134709,
+   "frames": [
+    118,
+    635
+   ],
+   "corr_at_0": 0.5102,
+   "best_shift_ms": 20.0,
+   "corr_best": 0.6108,
+   "level_db_vs_global": 1.85
+  },
+  "5": {
+   "mask_cells": 8795,
+   "frames": [
+    667,
+    799
+   ],
+   "corr_at_0": 0.792,
+   "best_shift_ms": 30.0,
+   "corr_best": 0.9458,
+   "level_db_vs_global": 2.16
+  },
+  "7": {
+   "mask_cells": 3255,
+   "frames": [
+    0,
+    799
+   ],
+   "corr_at_0": 0.9584,
+   "best_shift_ms": 0.0,
+   "corr_best": 0.9584,
+   "level_db_vs_global": 2.81
+  },
+  "9": {
+   "mask_cells": 46650,
+   "frames": [
+    164,
+    695
+   ],
+   "corr_at_0": 0.7871,
+   "best_shift_ms": 20.0,
+   "corr_best": 0.7963,
+   "level_db_vs_global": 3.58
+  },
+  "10": {
+   "mask_cells": 25082,
+   "frames": [
+    240,
+    628
+   ],
+   "corr_at_0": 0.729,
+   "best_shift_ms": 20.0,
+   "corr_best": 0.7815,
+   "level_db_vs_global": 4.23
+  },
+  "11": {
+   "mask_cells": 19200,
+   "frames": [
+    285,
+    662
+   ],
+   "corr_at_0": 0.8002,
+   "best_shift_ms": 10.0,
+   "corr_best": 0.8174,
+   "level_db_vs_global": 4.1
+  }
+ },
+ "global_gain": 0.09732673800620123,
+ "noise_floor_power": 5.226489140699616e-07
+}

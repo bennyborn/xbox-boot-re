@@ -1,0 +1,62 @@
+# Builds the wasm core and the data pack, then publishes the workbench
+# (hosts/web/) as a static site to GitHub Pages. No BIOS needed: the pack
+# comes from data/, already in the repo (README, "Data").
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends clang
+
+      # Only the wasm32 target is needed here; core/build.py also builds
+      # native test binaries as a side effect (harmless on Linux, core/src/
+      # has no platform-specific code) but --no-test skips running them.
+      # The pinned local toolchain (docs/provenance.md) bundles a wasm32
+      # compiler-rt with memcpy et al.; apt's clang doesn't, so -mbulk-memory
+      # makes the backend emit wasm's own memory.copy/memory.fill instead of
+      # calling out to memcpy/memset (same result, no library needed).
+      - name: Build the core and the data pack
+        env:
+          XBOOT_CLANG: clang
+          XBOOT_WASM_EXTRA_FLAGS: -mbulk-memory
+        run: python3 core/build.py --no-test
+
+      - name: Assemble the site
+        run: |
+          mkdir -p site/docs
+          cp -r hosts/web/. site/
+          cp -r docs/decomp site/docs/decomp
+          cp out/core/wasm/xboot.wasm site/xboot.wasm
+          cp out/pack/xboot.pak site/xboot.pak
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

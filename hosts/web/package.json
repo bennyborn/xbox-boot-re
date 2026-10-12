@@ -1,0 +1,5 @@
+{
+  "name": "xboot-web",
+  "private": true,
+  "type": "module"
+}

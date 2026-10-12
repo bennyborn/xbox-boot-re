@@ -1,0 +1,15 @@
+# Anchored at the root, so that tools/rom/ is not caught by the rom/ rule.
+
+# BIOS and key, copyrighted, stay local
+/rom/
+
+# Ghidra with its JDK, xemu, XboxBiosTool
+/.tools/
+
+# Recordings from xemu, local copies of public docs (ref/web/), tool output;
+# the Ghidra projects and their listings live in out/ghidra/
+/ref/
+/out/
+
+__pycache__/
+*.pyc

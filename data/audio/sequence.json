@@ -1,0 +1,2055 @@
+{
+ "source": "out/rom/kernel.img, 0x8006e908-0x8006f000",
+ "track_records": 30,
+ "channels": 16,
+ "event_max": 2,
+ "events": [
+  {
+   "event": 0,
+   "handler": 0,
+   "mask": "0x0000",
+   "list": "0x00000000"
+  },
+  {
+   "event": 1,
+   "handler": 1,
+   "mask": "0x0fff",
+   "list": "0x800a7bdc"
+  },
+  {
+   "event": 2,
+   "handler": 1,
+   "mask": "0x0001",
+   "list": "0x800a7c0c"
+  }
+ ],
+ "event_lists": {
+  "0x800a7bdc": [
+   "0x8006ebf8",
+   "0x8006ec78",
+   "0x8006ecc8",
+   "0x8006ed08",
+   "0x8006ed50",
+   "0x8006edf0",
+   "0x8006ee58",
+   "0x8006ee80",
+   "0x8006ee64",
+   "0x8006eee0",
+   "0x8006ef18",
+   "0x8006ef4c"
+  ],
+  "0x800a7c0c": [
+   "0x8006ef80"
+  ]
+ },
+ "descriptors": [
+  {
+   "index": 0,
+   "at": "0x8006eb18",
+   "data": "0x80093b78",
+   "bytes": 256,
+   "w8": 256,
+   "loop": 1,
+   "block_a": "0x800a7980",
+   "block_b": "0x800a79a8"
+  },
+  {
+   "index": 1,
+   "at": "0x8006eb2c",
+   "data": "0x80083328",
+   "bytes": 256,
+   "w8": 256,
+   "loop": 1,
+   "block_a": "0x800a7ac0",
+   "block_b": "0x800a7ae8"
+  },
+  {
+   "index": 2,
+   "at": "0x8006eb68",
+   "data": "0x80083328",
+   "bytes": 256,
+   "w8": 256,
+   "loop": 1,
+   "block_a": "0x800a7a20",
+   "block_b": "0x800a7a48"
+  },
+  {
+   "index": 3,
+   "at": "0x8006eb40",
+   "data": "0x80083328",
+   "bytes": 256,
+   "w8": 256,
+   "loop": 1,
+   "block_a": "0x800a7b10",
+   "block_b": "0x800a7b38"
+  },
+  {
+   "index": 4,
+   "at": "0x8006eb54",
+   "data": "0x80083328",
+   "bytes": 256,
+   "w8": 256,
+   "loop": 1,
+   "block_a": "0x800a7a20",
+   "block_b": "0x800a7a48"
+  },
+  {
+   "index": 5,
+   "at": "0x8006eb7c",
+   "data": "0x800a1b78",
+   "bytes": 16384,
+   "w8": 16384,
+   "loop": 1,
+   "block_a": "0x800a7b60",
+   "block_b": "0x800a7b88"
+  },
+  {
+   "index": 6,
+   "at": "0x8006eba4",
+   "data": "0x800a5b80",
+   "bytes": 7536,
+   "w8": 7536,
+   "loop": 0,
+   "block_a": "0x800a7a70",
+   "block_b": "0x800a7a98"
+  },
+  {
+   "index": 7,
+   "at": "0x8006ebe0",
+   "data": "0x80093c78",
+   "bytes": 13438,
+   "w8": 13438,
+   "loop": 1,
+   "block_a": "0x800a7a70",
+   "block_b": "0x800a7a98"
+  },
+  {
+   "index": 8,
+   "at": "0x8006eb90",
+   "data": "0x80083b70",
+   "bytes": 32768,
+   "w8": 32768,
+   "loop": 0,
+   "block_a": "0x800a7a70",
+   "block_b": "0x800a7a98"
+  },
+  {
+   "index": 9,
+   "at": "0x8006ebb8",
+   "data": "0x80078898",
+   "bytes": 43648,
+   "w8": 43648,
+   "loop": 0,
+   "block_a": "0x800a7a70",
+   "block_b": "0x800a7a98"
+  },
+  {
+   "index": 10,
+   "at": "0x8006ebcc",
+   "data": "0x800970f8",
+   "bytes": 43648,
+   "w8": 43648,
+   "loop": 0,
+   "block_a": "0x800a7a70",
+   "block_b": "0x800a7a98"
+  }
+ ],
+ "tracks": {
+  "0x8006ebf8": [
+   {
+    "addr": "0x8006ebf8",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     29000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ebfe",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     1
+    ]
+   },
+   {
+    "addr": "0x8006ec02",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     10
+    ]
+   },
+   {
+    "addr": "0x8006ec06",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     144
+    ]
+   },
+   {
+    "addr": "0x8006ec0a",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     130
+    ]
+   },
+   {
+    "addr": "0x8006ec10",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2
+    ]
+   },
+   {
+    "addr": "0x8006ec14",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     125
+    ]
+   },
+   {
+    "addr": "0x8006ec1a",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec1e",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     70
+    ]
+   },
+   {
+    "addr": "0x8006ec24",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2
+    ]
+   },
+   {
+    "addr": "0x8006ec28",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     77
+    ]
+   },
+   {
+    "addr": "0x8006ec2e",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec32",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     97
+    ]
+   },
+   {
+    "addr": "0x8006ec38",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec3c",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     91
+    ]
+   },
+   {
+    "addr": "0x8006ec42",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec46",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     47
+    ]
+   },
+   {
+    "addr": "0x8006ec4c",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec50",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     51
+    ]
+   },
+   {
+    "addr": "0x8006ec56",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec5a",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     57
+    ]
+   },
+   {
+    "addr": "0x8006ec60",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ec64",
+    "op": 1,
+    "name": "note",
+    "args": [
+     14,
+     132
+    ]
+   },
+   {
+    "addr": "0x8006ec6a",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ec6e",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ec72",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     20000
+    ]
+   },
+   {
+    "addr": "0x8006ec76",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ec78": [
+   {
+    "addr": "0x8006ec78",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     1000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ec7e",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006ec82",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     43
+    ]
+   },
+   {
+    "addr": "0x8006ec86",
+    "op": 1,
+    "name": "note",
+    "args": [
+     24,
+     1
+    ]
+   },
+   {
+    "addr": "0x8006ec8c",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     10
+    ]
+   },
+   {
+    "addr": "0x8006ec90",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     3000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ec96",
+    "op": 12,
+    "name": "glide",
+    "args": [
+     24,
+     13
+    ]
+   },
+   {
+    "addr": "0x8006ec9c",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ec9e",
+    "op": 13,
+    "name": "wait",
+    "args": [
+     4
+    ]
+   },
+   {
+    "addr": "0x8006eca2",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     20
+    ]
+   },
+   {
+    "addr": "0x8006eca6",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     60
+    ]
+   },
+   {
+    "addr": "0x8006ecaa",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     1
+    ]
+   },
+   {
+    "addr": "0x8006ecae",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     -1000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ecb4",
+    "op": 12,
+    "name": "glide",
+    "args": [
+     24,
+     15
+    ]
+   },
+   {
+    "addr": "0x8006ecba",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ecbc",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ecc0",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2000
+    ]
+   },
+   {
+    "addr": "0x8006ecc4",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ecc6",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   }
+  ],
+  "0x8006ecc8": [
+   {
+    "addr": "0x8006ecc8",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     7
+    ]
+   },
+   {
+    "addr": "0x8006eccc",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     12
+    ]
+   },
+   {
+    "addr": "0x8006ecd0",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     6000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ecd6",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     134
+    ]
+   },
+   {
+    "addr": "0x8006ecda",
+    "op": 1,
+    "name": "note",
+    "args": [
+     26,
+     472
+    ]
+   },
+   {
+    "addr": "0x8006ece0",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ece4",
+    "op": 13,
+    "name": "wait",
+    "args": [
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ece8",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     1000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ecee",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ecf0",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     30
+    ]
+   },
+   {
+    "addr": "0x8006ecf4",
+    "op": 13,
+    "name": "wait",
+    "args": [
+     10
+    ]
+   },
+   {
+    "addr": "0x8006ecf8",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     4
+    ]
+   },
+   {
+    "addr": "0x8006ecfc",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ecfe",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ed02",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     20000
+    ]
+   },
+   {
+    "addr": "0x8006ed06",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ed08": [
+   {
+    "addr": "0x8006ed08",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     9
+    ]
+   },
+   {
+    "addr": "0x8006ed0c",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     40
+    ]
+   },
+   {
+    "addr": "0x8006ed10",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     32767,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ed16",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     134
+    ]
+   },
+   {
+    "addr": "0x8006ed1a",
+    "op": 1,
+    "name": "note",
+    "args": [
+     38,
+     820
+    ]
+   },
+   {
+    "addr": "0x8006ed20",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -25
+    ]
+   },
+   {
+    "addr": "0x8006ed24",
+    "op": 1,
+    "name": "note",
+    "args": [
+     38,
+     200
+    ]
+   },
+   {
+    "addr": "0x8006ed2a",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ed2e",
+    "op": 13,
+    "name": "wait",
+    "args": [
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ed32",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     2
+    ]
+   },
+   {
+    "addr": "0x8006ed36",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     -1000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ed3c",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ed3e",
+    "op": 13,
+    "name": "wait",
+    "args": [
+     10000
+    ]
+   },
+   {
+    "addr": "0x8006ed42",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ed46",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2000
+    ]
+   },
+   {
+    "addr": "0x8006ed4a",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ed4c",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   }
+  ],
+  "0x8006ed50": [
+   {
+    "addr": "0x8006ed50",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     194
+    ]
+   },
+   {
+    "addr": "0x8006ed54",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     32000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ed5a",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006ed5e",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     160
+    ]
+   },
+   {
+    "addr": "0x8006ed62",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     8
+    ]
+   },
+   {
+    "addr": "0x8006ed66",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -3
+    ]
+   },
+   {
+    "addr": "0x8006ed6a",
+    "op": 1,
+    "name": "note",
+    "args": [
+     48,
+     15
+    ]
+   },
+   {
+    "addr": "0x8006ed70",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006ed74",
+    "op": 1,
+    "name": "note",
+    "args": [
+     53,
+     15
+    ]
+   },
+   {
+    "addr": "0x8006ed7a",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -3
+    ]
+   },
+   {
+    "addr": "0x8006ed7e",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006ed82",
+    "op": 1,
+    "name": "note",
+    "args": [
+     67,
+     15
+    ]
+   },
+   {
+    "addr": "0x8006ed88",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006ed8c",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -3
+    ]
+   },
+   {
+    "addr": "0x8006ed90",
+    "op": 1,
+    "name": "note",
+    "args": [
+     53,
+     15
+    ]
+   },
+   {
+    "addr": "0x8006ed96",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006ed9a",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ed9c",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006eda0",
+    "op": 10,
+    "name": "transpose_add",
+    "args": [
+     256
+    ]
+   },
+   {
+    "addr": "0x8006eda4",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -3
+    ]
+   },
+   {
+    "addr": "0x8006eda8",
+    "op": 1,
+    "name": "note",
+    "args": [
+     48,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006edae",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006edb2",
+    "op": 1,
+    "name": "note",
+    "args": [
+     53,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006edb8",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -3
+    ]
+   },
+   {
+    "addr": "0x8006edbc",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006edc0",
+    "op": 1,
+    "name": "note",
+    "args": [
+     67,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006edc6",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006edca",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -3
+    ]
+   },
+   {
+    "addr": "0x8006edce",
+    "op": 1,
+    "name": "note",
+    "args": [
+     53,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006edd4",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006edd8",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006edda",
+    "op": 1,
+    "name": "note",
+    "args": [
+     53,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006ede0",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ede4",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     20000
+    ]
+   },
+   {
+    "addr": "0x8006ede8",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006edea",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006edee",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   }
+  ],
+  "0x8006edf0": [
+   {
+    "addr": "0x8006edf0",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     6
+    ]
+   },
+   {
+    "addr": "0x8006edf4",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     55
+    ]
+   },
+   {
+    "addr": "0x8006edf8",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     1114
+    ]
+   },
+   {
+    "addr": "0x8006edfc",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     32000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ee02",
+    "op": 1,
+    "name": "note",
+    "args": [
+     34,
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ee08",
+    "op": 1,
+    "name": "note",
+    "args": [
+     29,
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ee0e",
+    "op": 1,
+    "name": "note",
+    "args": [
+     22,
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ee14",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     10
+    ]
+   },
+   {
+    "addr": "0x8006ee18",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     6
+    ]
+   },
+   {
+    "addr": "0x8006ee1c",
+    "op": 1,
+    "name": "note",
+    "args": [
+     34,
+     18
+    ]
+   },
+   {
+    "addr": "0x8006ee22",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2
+    ]
+   },
+   {
+    "addr": "0x8006ee26",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     30
+    ]
+   },
+   {
+    "addr": "0x8006ee2a",
+    "op": 1,
+    "name": "note",
+    "args": [
+     34,
+     18
+    ]
+   },
+   {
+    "addr": "0x8006ee30",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2
+    ]
+   },
+   {
+    "addr": "0x8006ee34",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     20
+    ]
+   },
+   {
+    "addr": "0x8006ee38",
+    "op": 1,
+    "name": "note",
+    "args": [
+     34,
+     18
+    ]
+   },
+   {
+    "addr": "0x8006ee3e",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2
+    ]
+   },
+   {
+    "addr": "0x8006ee42",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -35
+    ]
+   },
+   {
+    "addr": "0x8006ee46",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     -2500,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ee4c",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ee4e",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ee52",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     20000
+    ]
+   },
+   {
+    "addr": "0x8006ee56",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ee58": [
+   {
+    "addr": "0x8006ee58",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ee5c",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     20000
+    ]
+   },
+   {
+    "addr": "0x8006ee60",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006ee62",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     5
+    ]
+   }
+  ],
+  "0x8006ee64": [
+   {
+    "addr": "0x8006ee64",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     6
+    ]
+   },
+   {
+    "addr": "0x8006ee68",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     100
+    ]
+   },
+   {
+    "addr": "0x8006ee6c",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     1194
+    ]
+   },
+   {
+    "addr": "0x8006ee70",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     32000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ee76",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ee7a",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     20000
+    ]
+   },
+   {
+    "addr": "0x8006ee7e",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ee80": [
+   {
+    "addr": "0x8006ee80",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006ee84",
+    "op": 10,
+    "name": "transpose_add",
+    "args": [
+     96
+    ]
+   },
+   {
+    "addr": "0x8006ee88",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     18
+    ]
+   },
+   {
+    "addr": "0x8006ee8c",
+    "op": 17,
+    "name": "filter_set",
+    "args": [
+     1000,
+     26000
+    ]
+   },
+   {
+    "addr": "0x8006ee92",
+    "op": 1,
+    "name": "note",
+    "args": [
+     26,
+     1
+    ]
+   },
+   {
+    "addr": "0x8006ee98",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     19
+    ]
+   },
+   {
+    "addr": "0x8006ee9c",
+    "op": 12,
+    "name": "glide",
+    "args": [
+     26,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006eea2",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     1500,
+     2600
+    ]
+   },
+   {
+    "addr": "0x8006eea8",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006eeaa",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     800
+    ]
+   },
+   {
+    "addr": "0x8006eeae",
+    "op": 1,
+    "name": "note",
+    "args": [
+     26,
+     1
+    ]
+   },
+   {
+    "addr": "0x8006eeb4",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     30
+    ]
+   },
+   {
+    "addr": "0x8006eeb8",
+    "op": 12,
+    "name": "glide",
+    "args": [
+     26,
+     10
+    ]
+   },
+   {
+    "addr": "0x8006eebe",
+    "op": 16,
+    "name": "filter_add",
+    "args": [
+     -750,
+     2600
+    ]
+   },
+   {
+    "addr": "0x8006eec4",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006eec6",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     30
+    ]
+   },
+   {
+    "addr": "0x8006eeca",
+    "op": 12,
+    "name": "glide",
+    "args": [
+     26,
+     5
+    ]
+   },
+   {
+    "addr": "0x8006eed0",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     3
+    ]
+   },
+   {
+    "addr": "0x8006eed4",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006eed6",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006eeda",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2000
+    ]
+   },
+   {
+    "addr": "0x8006eede",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006eee0": [
+   {
+    "addr": "0x8006eee0",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     9
+    ]
+   },
+   {
+    "addr": "0x8006eee4",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     50
+    ]
+   },
+   {
+    "addr": "0x8006eee8",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     276
+    ]
+   },
+   {
+    "addr": "0x8006eeec",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     280
+    ]
+   },
+   {
+    "addr": "0x8006eef2",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006eef6",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -15
+    ]
+   },
+   {
+    "addr": "0x8006eefa",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     244
+    ]
+   },
+   {
+    "addr": "0x8006ef00",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ef04",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -15
+    ]
+   },
+   {
+    "addr": "0x8006ef08",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     500
+    ]
+   },
+   {
+    "addr": "0x8006ef0e",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ef12",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2000
+    ]
+   },
+   {
+    "addr": "0x8006ef16",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ef18": [
+   {
+    "addr": "0x8006ef18",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     9
+    ]
+   },
+   {
+    "addr": "0x8006ef1c",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     50
+    ]
+   },
+   {
+    "addr": "0x8006ef20",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     404
+    ]
+   },
+   {
+    "addr": "0x8006ef24",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     252
+    ]
+   },
+   {
+    "addr": "0x8006ef2a",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ef2e",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     194
+    ]
+   },
+   {
+    "addr": "0x8006ef34",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ef38",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -20
+    ]
+   },
+   {
+    "addr": "0x8006ef3c",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     200
+    ]
+   },
+   {
+    "addr": "0x8006ef42",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ef46",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2000
+    ]
+   },
+   {
+    "addr": "0x8006ef4a",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ef4c": [
+   {
+    "addr": "0x8006ef4c",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     9
+    ]
+   },
+   {
+    "addr": "0x8006ef50",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     50
+    ]
+   },
+   {
+    "addr": "0x8006ef54",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     476
+    ]
+   },
+   {
+    "addr": "0x8006ef58",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     274
+    ]
+   },
+   {
+    "addr": "0x8006ef5e",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ef62",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     154
+    ]
+   },
+   {
+    "addr": "0x8006ef68",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ef6c",
+    "op": 9,
+    "name": "vol_add",
+    "args": [
+     -20
+    ]
+   },
+   {
+    "addr": "0x8006ef70",
+    "op": 1,
+    "name": "note",
+    "args": [
+     33,
+     200
+    ]
+   },
+   {
+    "addr": "0x8006ef76",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     255
+    ]
+   },
+   {
+    "addr": "0x8006ef7a",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     2000
+    ]
+   },
+   {
+    "addr": "0x8006ef7e",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   }
+  ],
+  "0x8006ef80": [
+   {
+    "addr": "0x8006ef80",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     10
+    ]
+   },
+   {
+    "addr": "0x8006ef84",
+    "op": 1,
+    "name": "note",
+    "args": [
+     36,
+     800
+    ]
+   },
+   {
+    "addr": "0x8006ef8a",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     9
+    ]
+   },
+   {
+    "addr": "0x8006ef8e",
+    "op": 1,
+    "name": "note",
+    "args": [
+     36,
+     800
+    ]
+   },
+   {
+    "addr": "0x8006ef94",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     200
+    ]
+   },
+   {
+    "addr": "0x8006ef98",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006ef9c",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     5
+    ]
+   },
+   {
+    "addr": "0x8006efa0",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     120
+    ]
+   },
+   {
+    "addr": "0x8006efa4",
+    "op": 1,
+    "name": "note",
+    "args": [
+     24,
+     50
+    ]
+   },
+   {
+    "addr": "0x8006efaa",
+    "op": 10,
+    "name": "transpose_add",
+    "args": [
+     200
+    ]
+   },
+   {
+    "addr": "0x8006efae",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006efb2",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006efb4",
+    "op": 3,
+    "name": "loop",
+    "args": [
+     120
+    ]
+   },
+   {
+    "addr": "0x8006efb8",
+    "op": 1,
+    "name": "note",
+    "args": [
+     0,
+     50
+    ]
+   },
+   {
+    "addr": "0x8006efbe",
+    "op": 10,
+    "name": "transpose_add",
+    "args": [
+     -200
+    ]
+   },
+   {
+    "addr": "0x8006efc2",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006efc6",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006efc8",
+    "op": 4,
+    "name": "repeat",
+    "args": []
+   },
+   {
+    "addr": "0x8006efca",
+    "op": 1,
+    "name": "note",
+    "args": [
+     5,
+     6
+    ]
+   },
+   {
+    "addr": "0x8006efd0",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     16
+    ]
+   },
+   {
+    "addr": "0x8006efd4",
+    "op": 5,
+    "name": "sample",
+    "args": [
+     0
+    ]
+   },
+   {
+    "addr": "0x8006efd8",
+    "op": 1,
+    "name": "note",
+    "args": [
+     36,
+     200
+    ]
+   },
+   {
+    "addr": "0x8006efde",
+    "op": 0,
+    "name": "rest",
+    "args": [
+     0
+    ]
+   }
+  ]
+ }
+}

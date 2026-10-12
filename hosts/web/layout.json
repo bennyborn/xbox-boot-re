@@ -1,0 +1,58 @@
+{
+  "xb_config": { "size": 8, "fields": { "flags": 0, "start_tick": 4 } },
+  "xb_timing": {
+    "size": 176,
+    "fields": { "t": 0, "x18": 4, "x1c": 8, "x20": 12, "x24": 16, "last_tick": 20, "setup_tick": 24, "rng": 28, "pulse": 32 }
+  },
+  "xb_frame_out": {
+    "size": 156,
+    "fields": {
+      "view": 0, "proj": 64, "draws": 128, "draw_cap": 132, "draw_count": 136,
+      "params": 140, "param_cap": 144, "param_count": 148, "clear_depth": 152
+    }
+  },
+  "xb_draw": {
+    "size": 112,
+    "fields": {
+      "step": 0, "what": 2, "mesh": 4, "part": 6, "prim": 8, "detail": 9, "color": 10, "zeta": 11, "tex": 12,
+      "flags": 16, "first": 20, "count": 24, "program": 28, "combiners": 32,
+      "state": 36, "state.alpha_test": 36, "state.blend": 37, "state.depth_test": 38, "state.depth_write": 39,
+      "state.cull": 40, "state.alpha_func": 44, "state.blend_src": 46, "state.blend_dst": 48, "state.depth_func": 50,
+      "state.cull_face": 52, "state.shadow_func": 54, "state.alpha_ref": 56, "state.colour_mask": 60,
+      "factor": 64, "world": 68, "view": 72, "proj": 76,
+      "vs[0].base": 80, "vs[0].count": 82, "vs[0].first": 84, "vs[1].base": 88, "vs[1].count": 90, "vs[1].first": 92,
+      "ps_first": 96, "ps_count": 100, "vtx_first": 104, "vtx_count": 108
+    }
+  },
+  "xb_mesh_info": {
+    "size": 28,
+    "fields": { "type": 0, "format": 4, "attr_floats": 8, "prim": 12, "forms": 16, "vertices": 20, "indices": 24 }
+  },
+  "xb_texture_desc": {
+    "size": 32,
+    "fields": { "width": 0, "height": 4, "levels": 8, "faces": 12, "format": 16, "texel_bytes": 20, "format_word": 24, "bytes": 28 }
+  },
+  "xb_form": { "size": 24, "fields": { "first_vertex": 0 } },
+  "xb_logo_mesh_desc": { "size": 12, "fields": { "vertices": 0, "indices": 4, "floats": 8 } },
+  "xb_logo": { "size": 40, "fields": { "tm": 0, "texture": 4, "phase": 8, "rtt": 12, "updates": 16, "rtt_count": 20, "pos": 24, "alpha": 36 } },
+  "xb_camera": {
+    "size": 248,
+    "fields": { "t": 0, "s": 4, "key": 8, "path": 12, "chamber_on": 16, "logo_on": 17, "eye": 20, "target": 32, "up": 44, "view": 56, "view_inv": 120, "proj": 184 }
+  },
+  "xb_track": { "size": 20, "fields": { "dist": 0, "azimuth": 4, "elevation": 8, "blob_dist": 12, "fx_draws": 16 } },
+  "xb_part": { "size": 28, "fields": { "group": 0, "type": 1, "side": 2, "index": 4, "form": 6, "pos_track": 8, "rot_track": 10, "scale": 12 } },
+  "xb_campath": {
+    "size": 1852,
+    "fields": { "path": 0, "first": 4, "n_table": 8, "n_keys": 12, "key": 16, "frame": 1756, "origin": 1820, "look": 1832, "fade_t0": 1844, "fade_k": 1848 }
+  },
+  "xb_chamber_pose": { "size": 2256, "fields": { "t": 0, "u": 4, "k": 8, "detail": 12, "rot": 16, "pos": 1872 } },
+  "xb_audio_call": { "size": 16, "fields": { "a0": 0, "a1": 4, "tick": 8, "channel": 10, "fn": 11, "effect": 12 } },
+  "xb_audio_out": {
+    "size": 3280,
+    "fields": { "block": 0, "tick": 4, "n_cmds": 8, "n_calls": 12, "cmd": 16, "call": 144, "voice": 400, "gain": 2448, "bin": 2640, "out": 3024 }
+  },
+  "xb_blob": {
+    "size": 2552,
+    "fields": { "rng": 0, "draws": 4, "n_bulges": 8, "n_drops": 12, "flat": 16, "updates": 20, "center": 24, "radius": 36, "colour": 40, "bulge": 56, "drop": 2104 }
+  }
+}

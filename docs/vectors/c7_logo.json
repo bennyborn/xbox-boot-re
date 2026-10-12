@@ -1,0 +1,2523 @@
+{
+ "runs": {
+  "c7_main": {
+   "command": "python tools/xemu/probe_c7.py --name c7_main --trace-from 5.0",
+   "static": {
+    "A": {
+     "phys": "0x03069000",
+     "vertices": 210,
+     "indices": 336,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "B": {
+     "phys": "0x03066000",
+     "vertices": 77,
+     "indices": 225,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "C": {
+     "phys": "0x03025000",
+     "vertices": 34,
+     "indices": 105,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "D": {
+     "phys": "0x03020000",
+     "vertices": 501,
+     "indices": 1008,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "Q1": {
+     "phys": "0x0301e000",
+     "vertices": 4,
+     "indices": 6,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "Q2": {
+     "phys": "0x0301d000",
+     "vertices": 4,
+     "indices": 6,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "E": {
+     "phys": "0x0301f000",
+     "vertices": 156,
+     "indices": 462,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "quad_texture": {
+     "phys": "0x0301c000",
+     "z_order_equal": true,
+     "linear_equal": false
+    }
+   },
+   "state": {
+    "frames": 354,
+    "equal": 354,
+    "t_first": 0.02800000086426735,
+    "t_last": 8.006985664367676,
+    "first_logo_frame": 5.2609992027282715
+   },
+   "texture_draws": {
+    "guest_frames": [
+     111,
+     125
+    ],
+    "model_frames": [
+     111,
+     125
+    ],
+    "t": [
+     6.1359992027282715,
+     6.252999305725098
+    ]
+   },
+   "stream": {
+    "flips": 254,
+    "draws_per_mesh": {
+     "A": 9,
+     "B": 9,
+     "C": 9,
+     "D": 9,
+     "Q1": 15,
+     "Q2": 15,
+     "E": 15
+    },
+    "equal": 81,
+    "draws": [
+     {
+      "flip": 3,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b6",
+        "0x37b2546f",
+        "0xb756251d",
+        "0xbb87a593"
+       ],
+       [
+        "0x3785cd0e",
+        "0x3db63a54",
+        "0x401a679a",
+        "0xc18ace70"
+       ],
+       [
+        "0xb74908bb",
+        "0x3f7ff43c",
+        "0xbd1709c0",
+        "0xc3046ea7"
+       ],
+       [
+        "0xb748e62b",
+        "0x3f7fd37a",
+        "0xbd16f66a",
+        "0xc303f74d"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f1793de",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f1793de",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3e0c35e2",
+        "0x3e0c35e2",
+        "0x3e0c35e2",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.2609992027282715
+      },
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x3761f2b7",
+        "0xb707ba51",
+        "0xbb2bbb43"
+       ],
+       [
+        "0x372e1ead",
+        "0x3d647a24",
+        "0x401a77ea",
+        "0xc12e090d"
+       ],
+       [
+        "0xb6fc775b",
+        "0x3f8007a4",
+        "0xbcbd5f13",
+        "0xc3006b37"
+       ],
+       [
+        "0xb6fc7fee",
+        "0x3f7fee81",
+        "0xbcbd46d9",
+        "0xc2ffe8c2"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3f7da327",
+        "0x3f7da327",
+        "0x3f7da327",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.355998992919922
+      },
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b6",
+        "0x3609c433",
+        "0xb5a6b49a",
+        "0xb9cea5ae"
+       ],
+       [
+        "0x35d8192e",
+        "0x3bf93598",
+        "0x401a8246",
+        "0xbfbdd440"
+       ],
+       [
+        "0xb59b8053",
+        "0x3f80103a",
+        "0xbb4e8ecf",
+        "0xc2d991af"
+       ],
+       [
+        "0xb598590d",
+        "0x3f7fffac",
+        "0xbb4e74f0",
+        "0xc2d8a90a"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4a0b20",
+        "0x3f4a0b20",
+        "0x3f4a0b20",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.486999034881592
+      },
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x33d63ce4",
+        "0xb397073b",
+        "0xb72537ef"
+       ],
+       [
+        "0x33b7bdd1",
+        "0x3bad80ac",
+        "0x401a825f",
+        "0xbf8429b9"
+       ],
+       [
+        "0xb36697eb",
+        "0x3f80104f",
+        "0xbb0fcfe2",
+        "0xc1d6d2ba"
+       ],
+       [
+        "0xb36a494e",
+        "0x3f7fffd6",
+        "0xbb0fbcdf",
+        "0xc1d38406"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3f1934dd",
+        "0x3f1934dd",
+        "0x3f1934dd",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.61099910736084
+      },
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x338cb6be",
+        "0xb355d6b1",
+        "0x35be3070"
+       ],
+       [
+        "0x33805490",
+        "0xbe18b6f3",
+        "0x401a36ef",
+        "0xc1988840"
+       ],
+       [
+        "0xb30ad395",
+        "0x3f7fa38e",
+        "0x3d7d2716",
+        "0x4342249b"
+       ],
+       [
+        "0xb23e3766",
+        "0x3f7f82d6",
+        "0x3d7d06a6",
+        "0x43427229"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3eae149d",
+        "0x3eae149d",
+        "0x3eae149d",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.778999328613281
+      },
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b6",
+        "0x33066130",
+        "0xb2fb3dd8",
+        "0xb60ab420"
+       ],
+       [
+        "0x33bac92b",
+        "0xbf48dcb2",
+        "0x40121f3c",
+        "0xc26450cc"
+       ],
+       [
+        "0xb28b7c5e",
+        "0x3f723956",
+        "0x3ea67b9a",
+        "0x4388bdbc"
+       ],
+       [
+        "0xb2bd52c0",
+        "0x3f721a55",
+        "0x3ea6664c",
+        "0x4388df6f"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3da0b0ec",
+        "0x3da0b0ec",
+        "0x3da0b0ec",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.948999404907227
+      },
+      "equal": true
+     },
+     {
+      "flip": 9,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 9,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 9,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 9,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x32952960",
+        "0xb2b37ded",
+        "0xb734fc77"
+       ],
+       [
+        "0xb3161be6",
+        "0xbf4a4587",
+        "0x4012001d",
+        "0xc2642028"
+       ],
+       [
+        "0x322f1d9e",
+        "0x3f7205bf",
+        "0x3ea7a6ad",
+        "0x43894f86"
+       ],
+       [
+        "0x321a56c9",
+        "0x3f71e6c5",
+        "0x3ea79138",
+        "0x43897126"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3d9a63d9",
+        "0x3d9a63d9",
+        "0x3d9a63d9",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.9509992599487305
+      },
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x338cb6be",
+        "0xb355d6b1",
+        "0xb6d21929"
+       ],
+       [
+        "0x3294bec8",
+        "0xbf66b612",
+        "0x400f572d",
+        "0xc25ff830"
+       ],
+       [
+        "0xb28c5028",
+        "0x3f6d9cf8",
+        "0x3ebf3919",
+        "0x43964ea0"
+       ],
+       [
+        "0xb2762cd6",
+        "0x3f6d7e8f",
+        "0x3ebf209f",
+        "0x43966e97"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "texture",
+       "t": 6.1359992027282715
+      },
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0x8a000000",
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0x8a000000",
+      "equal": true
+     },
+     {
+      "flip": 10,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 11,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb1000000",
+      "equal": true
+     },
+     {
+      "flip": 11,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb1000000",
+      "equal": true
+     },
+     {
+      "flip": 11,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 12,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb2000000",
+      "equal": true
+     },
+     {
+      "flip": 12,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb2000000",
+      "equal": true
+     },
+     {
+      "flip": 12,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 13,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb3000000",
+      "equal": true
+     },
+     {
+      "flip": 13,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb3000000",
+      "equal": true
+     },
+     {
+      "flip": 13,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 14,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb9000000",
+      "equal": true
+     },
+     {
+      "flip": 14,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xb9000000",
+      "equal": true
+     },
+     {
+      "flip": 14,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 15,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xc1000000",
+      "equal": true
+     },
+     {
+      "flip": 15,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xc1000000",
+      "equal": true
+     },
+     {
+      "flip": 15,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 16,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xc6000000",
+      "equal": true
+     },
+     {
+      "flip": 16,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xc6000000",
+      "equal": true
+     },
+     {
+      "flip": 16,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 17,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xcd000000",
+      "equal": true
+     },
+     {
+      "flip": 17,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xcd000000",
+      "equal": true
+     },
+     {
+      "flip": 17,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 18,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xd5000000",
+      "equal": true
+     },
+     {
+      "flip": 18,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xd5000000",
+      "equal": true
+     },
+     {
+      "flip": 18,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 19,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xda000000",
+      "equal": true
+     },
+     {
+      "flip": 19,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xda000000",
+      "equal": true
+     },
+     {
+      "flip": 19,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 20,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xe3000000",
+      "equal": true
+     },
+     {
+      "flip": 20,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xe3000000",
+      "equal": true
+     },
+     {
+      "flip": 20,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 21,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xeb000000",
+      "equal": true
+     },
+     {
+      "flip": 21,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xeb000000",
+      "equal": true
+     },
+     {
+      "flip": 21,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 22,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xef000000",
+      "equal": true
+     },
+     {
+      "flip": 22,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xef000000",
+      "equal": true
+     },
+     {
+      "flip": 22,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 23,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xf9000000",
+      "equal": true
+     },
+     {
+      "flip": 23,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xf9000000",
+      "equal": true
+     },
+     {
+      "flip": 23,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x338cb6be",
+        "0xb355d6b1",
+        "0xb6d21929"
+       ],
+       [
+        "0x3294bec8",
+        "0xbf66b612",
+        "0x400f572d",
+        "0xc25ff830"
+       ],
+       [
+        "0xb28c5028",
+        "0x3f6d9cf8",
+        "0x3ebf3919",
+        "0x43964ea0"
+       ],
+       [
+        "0xb2762cd6",
+        "0x3f6d7e8f",
+        "0x3ebf209f",
+        "0x43966e97"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "texture",
+       "t": 6.252999305725098
+      },
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xff000000",
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xff000000",
+      "equal": true
+     },
+     {
+      "flip": 24,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     }
+    ]
+   },
+   "failures": []
+  },
+  "c7_b": {
+   "command": "python tools/xemu/probe_c7.py --name c7_b --trace-from 5.2",
+   "static": {
+    "A": {
+     "phys": "0x03069000",
+     "vertices": 210,
+     "indices": 336,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "B": {
+     "phys": "0x03066000",
+     "vertices": 77,
+     "indices": 225,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "C": {
+     "phys": "0x03025000",
+     "vertices": 34,
+     "indices": 105,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "D": {
+     "phys": "0x03020000",
+     "vertices": 501,
+     "indices": 1008,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "Q1": {
+     "phys": "0x0301e000",
+     "vertices": 4,
+     "indices": 6,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "Q2": {
+     "phys": "0x0301d000",
+     "vertices": 4,
+     "indices": 6,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "E": {
+     "phys": "0x0301f000",
+     "vertices": 156,
+     "indices": 462,
+     "vertex_count": true,
+     "index_count": true,
+     "vertex_buffer": true,
+     "index_list": true
+    },
+    "quad_texture": {
+     "phys": "0x0301c000",
+     "z_order_equal": true,
+     "linear_equal": false
+    }
+   },
+   "state": {
+    "frames": 334,
+    "equal": 334,
+    "t_first": 0.03100000135600567,
+    "t_last": 8.008986473083496,
+    "first_logo_frame": 5.275999069213867
+   },
+   "texture_draws": {
+    "guest_frames": [
+     113,
+     114
+    ],
+    "model_frames": [
+     113,
+     114
+    ],
+    "t": [
+     6.114998817443848,
+     6.338998794555664
+    ]
+   },
+   "stream": {
+    "flips": 229,
+    "draws_per_mesh": {
+     "A": 8,
+     "B": 8,
+     "C": 8,
+     "D": 8,
+     "Q1": 2,
+     "Q2": 2,
+     "E": 2
+    },
+    "equal": 38,
+    "draws": [
+     {
+      "flip": 1,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 1,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 1,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 1,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b4",
+        "0x37a8de12",
+        "0xb74acaa3",
+        "0xbb806ae3"
+       ],
+       [
+        "0x377e8fd3",
+        "0x3dac939b",
+        "0x401a6a5c",
+        "0xc1837473"
+       ],
+       [
+        "0xb73e6dfc",
+        "0x3f7ff8d1",
+        "0xbd0f09ec",
+        "0xc303fa5d"
+       ],
+       [
+        "0xb73e4e46",
+        "0x3f7fd80e",
+        "0xbd0ef79a",
+        "0xc3038312"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f1793de",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f1793de",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3de928eb",
+        "0x3de928eb",
+        "0x3de928eb",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.275999069213867
+      },
+      "equal": true
+     },
+     {
+      "flip": 2,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 2,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 2,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 2,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b4",
+        "0x37705d9d",
+        "0xb7106094",
+        "0xbb36a814"
+       ],
+       [
+        "0x37380776",
+        "0x3d731da0",
+        "0x401a7683",
+        "0xc1392f9a"
+       ],
+       [
+        "0xb706a218",
+        "0x3f80067b",
+        "0xbcc98139",
+        "0xc300f76f"
+       ],
+       [
+        "0xb706c665",
+        "0x3f7fec30",
+        "0xbcc96769",
+        "0xc3008087"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f1793de",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f1793de",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3b97474f",
+        "0x3b97474f",
+        "0x3b97474f",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.346999168395996
+      },
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 3,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b7",
+        "0x35c51b7f",
+        "0xb56f4feb",
+        "0xb992b37b"
+       ],
+       [
+        "0x35a0c975",
+        "0x3bab0655",
+        "0x401a8263",
+        "0xbf8245bb"
+       ],
+       [
+        "0xb55f3aa8",
+        "0x3f801051",
+        "0xbb0dc0a3",
+        "0xc2d26a58"
+       ],
+       [
+        "0xb55a19e6",
+        "0x3f7fffda",
+        "0xbb0daef7",
+        "0xc2d1829e"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3f44ec67",
+        "0x3f44ec67",
+        "0x3f44ec67",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.499999046325684
+      },
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 4,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x33d63ce4",
+        "0xb397073b",
+        "0xb74f44b0"
+       ],
+       [
+        "0x33392451",
+        "0x3c64b16d",
+        "0x401a81cf",
+        "0xc02e3332"
+       ],
+       [
+        "0xb30d8c49",
+        "0x3f800fd8",
+        "0xbbbd8d16",
+        "0x421037cf"
+       ],
+       [
+        "0xb30b876c",
+        "0x3f7ffee7",
+        "0xbbbd7509",
+        "0x4211bef4"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3f090f11",
+        "0x3f090f11",
+        "0x3f090f11",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.651998996734619
+      },
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 5,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b4",
+        "0xb340109c",
+        "0x328c7173",
+        "0xb799e8b4"
+       ],
+       [
+        "0xb341c719",
+        "0xbef9f646",
+        "0x40175144",
+        "0xc24b6fe0"
+       ],
+       [
+        "0x32ed4d8c",
+        "0x3f7ad61d",
+        "0x3e4f2dc8",
+        "0x436c4e0c"
+       ],
+       [
+        "0x32e5571a",
+        "0x3f7ab602",
+        "0x3e4f1345",
+        "0x436c9634"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3e775645",
+        "0x3e775645",
+        "0x3e775645",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.84299898147583
+      },
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 6,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b4",
+        "0x335da0fc",
+        "0xb331f6bc",
+        "0xb76c815c"
+       ],
+       [
+        "0x32e8c59c",
+        "0xbf3d31e1",
+        "0x4013178e",
+        "0xc265d4ce"
+       ],
+       [
+        "0x3204ffb8",
+        "0x3f73d4fb",
+        "0x3e9cd002",
+        "0x43843e23"
+       ],
+       [
+        "0xb05af8f0",
+        "0x3f73b5c5",
+        "0x3e9cbbf0",
+        "0x43846069"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x3ddc8eb1",
+        "0x3ddc8eb1",
+        "0x3ddc8eb1",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "frame",
+       "t": 5.929998874664307
+      },
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x338cb6be",
+        "0xb355d6b1",
+        "0xb6d21929"
+       ],
+       [
+        "0x3294bec8",
+        "0xbf66b612",
+        "0x400f572d",
+        "0xc25ff830"
+       ],
+       [
+        "0xb28c5028",
+        "0x3f6d9cf8",
+        "0x3ebf3919",
+        "0x43964ea0"
+       ],
+       [
+        "0xb2762cd6",
+        "0x3f6d7e8f",
+        "0x3ebf209f",
+        "0x43966e97"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "texture",
+       "t": 6.114998817443848
+      },
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0x75000000",
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0x75000000",
+      "equal": true
+     },
+     {
+      "flip": 7,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "A",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 336,
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "B",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 225,
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "C",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 105,
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "D",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 1008,
+      "constants_0_8": [
+       [
+        "0x3fe7c3b5",
+        "0x338cb6be",
+        "0xb355d6b1",
+        "0xb6d21929"
+       ],
+       [
+        "0x3294bec8",
+        "0xbf66b612",
+        "0x400f572d",
+        "0xc25ff830"
+       ],
+       [
+        "0xb28c5028",
+        "0x3f6d9cf8",
+        "0x3ebf3919",
+        "0x43964ea0"
+       ],
+       [
+        "0xb2762cd6",
+        "0x3f6d7e8f",
+        "0x3ebf209f",
+        "0x43966e97"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f50d068",
+        "0x3f800000",
+        "0x3f0786c2",
+        "0x3f800000"
+       ],
+       [
+        "0x3f4bc6a8",
+        "0x3f5fdf3b",
+        "0x3b7f9724",
+        "0x3f800000"
+       ],
+       [
+        "0x3e04816f",
+        "0x3ed566cf",
+        "0x3db88659",
+        "0x3f800000"
+       ],
+       [
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x3f800000"
+       ]
+      ],
+      "matched": {
+       "by": "texture",
+       "t": 6.338998794555664
+      },
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "Q1",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xff000000",
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "Q2",
+      "primitive": 5,
+      "stride": 20,
+      "size": 3,
+      "type": 2,
+      "indices": 6,
+      "factor": "0xff000000",
+      "equal": true
+     },
+     {
+      "flip": 8,
+      "mesh": "E",
+      "primitive": 5,
+      "stride": 12,
+      "size": 3,
+      "type": 2,
+      "indices": 462,
+      "factor": "0xff62ca13",
+      "equal": true
+     }
+    ]
+   },
+   "failures": []
+  }
+ },
+ "meshes": {
+  "A": {
+   "vertices": 210,
+   "indices": 336,
+   "triangles": 112
+  },
+  "B": {
+   "vertices": 77,
+   "indices": 225,
+   "triangles": 75
+  },
+  "C": {
+   "vertices": 34,
+   "indices": 105,
+   "triangles": 35
+  },
+  "D": {
+   "vertices": 501,
+   "indices": 1008,
+   "triangles": 336
+  },
+  "Q1": {
+   "vertices": 4,
+   "indices": 6,
+   "triangles": 2
+  },
+  "Q2": {
+   "vertices": 4,
+   "indices": 6,
+   "triangles": 2
+  },
+  "E": {
+   "vertices": 156,
+   "indices": 462,
+   "triangles": 154
+  }
+ },
+ "failures": 0
+}

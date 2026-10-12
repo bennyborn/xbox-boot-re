@@ -1,0 +1,309 @@
+[
+ {
+  "run": "c3_ko_base",
+  "command": [
+   ".tools/xemu/xemu.exe",
+   "-config_path",
+   "out/xemu/runs/c3_ko_base/xemu.toml",
+   "-S",
+   "-qmp",
+   "tcp:127.0.0.1:4444,server,nowait",
+   "-blockdev",
+   "driver=qcow2,node-name=snap,file.driver=file,file.filename=out/xemu/runs/c3_ko_base/snap.qcow2",
+   "-D",
+   "out/xemu/runs/c3_ko_base/trace.log",
+   "-trace",
+   "enable=nv2a_pgraph_flip_increment_write",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_color",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_zeta",
+   "-trace",
+   "enable=nv2a_irq"
+  ],
+  "inputs": {
+   "xemu": {
+    "path": ".tools/xemu/xemu.exe",
+    "sha256": "7da537938ea2ac09f894186ba793c9ae51dff37c95903b0002273b8d363818b7"
+   },
+   "mcpx": "e99e3a772bf5f5d262786aee895664eb96136196e37732fe66e14ae062f20335",
+   "flash": "3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c",
+   "eeprom": "7d34afba46730a0fba86bc40147e84c4db8066509a5f90ef24d5d56416d47aed"
+  },
+  "patches": [],
+  "images": [
+   {
+    "flip": 61,
+    "fb_sha256": "0fc80bc061456b183548e50abcb6014492a87b1ef8440ef866a55d51637c85ef"
+   },
+   {
+    "flip": 151,
+    "fb_sha256": "9e0fb131fb867c951c63f1b22b79904f0a6e818e5def6d058d5a91e78c8d9cc3"
+   },
+   {
+    "flip": 241,
+    "fb_sha256": "cf2a97bedca7e0414df70081ae45cc2ba5282a0019cdd328a686b0db8fb99089"
+   },
+   {
+    "flip": 330,
+    "fb_sha256": "03e75b68cb3ff25e62ccc11d972ae864d157f27b57b84af6303a3341f7c85c0e"
+   },
+   {
+    "flip": 420,
+    "fb_sha256": "f7cbe18b4908a018971cb9c1635629220533b0cf7e65516e3b799e7fafacadc8"
+   }
+  ]
+ },
+ {
+  "run": "c3_ko_57c",
+  "command": [
+   ".tools/xemu/xemu.exe",
+   "-config_path",
+   "out/xemu/runs/c3_ko_57c/xemu.toml",
+   "-S",
+   "-qmp",
+   "tcp:127.0.0.1:4444,server,nowait",
+   "-blockdev",
+   "driver=qcow2,node-name=snap,file.driver=file,file.filename=out/xemu/runs/c3_ko_57c/snap.qcow2",
+   "-D",
+   "out/xemu/runs/c3_ko_57c/trace.log",
+   "-gdb",
+   "tcp:127.0.0.1:1234",
+   "-trace",
+   "enable=nv2a_pgraph_flip_increment_write",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_color",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_zeta",
+   "-trace",
+   "enable=nv2a_irq"
+  ],
+  "inputs": {
+   "xemu": {
+    "path": ".tools/xemu/xemu.exe",
+    "sha256": "7da537938ea2ac09f894186ba793c9ae51dff37c95903b0002273b8d363818b7"
+   },
+   "mcpx": "e99e3a772bf5f5d262786aee895664eb96136196e37732fe66e14ae062f20335",
+   "flash": "3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c",
+   "eeprom": "7d34afba46730a0fba86bc40147e84c4db8066509a5f90ef24d5d56416d47aed"
+  },
+  "patches": [
+   {
+    "addr": "0x8005bc63",
+    "old": "558d6c",
+    "new": "c20800"
+   }
+  ],
+  "images": [
+   {
+    "flip": 60,
+    "fb_sha256": "af8c2f28cf59134019a7df9f72ea30e7bdb70092ba06c6433466142c4fb445a7"
+   },
+   {
+    "flip": 151,
+    "fb_sha256": "7828a01e6f7a3fc7b8d9aef32a82bb14714a8766082f54adc122d8155abf6f5a"
+   },
+   {
+    "flip": 241,
+    "fb_sha256": "4d9ea5ebdf1d0d7a4630043de2c9cedbec66b384204281953be72c1aa331d2f5"
+   },
+   {
+    "flip": 331,
+    "fb_sha256": "e357c386629987b198834b9f7a74402474365bc9fb737e2cbb21a1259f32bff4"
+   },
+   {
+    "flip": 420,
+    "fb_sha256": "10f4d37bc929077c1d41b064466013afdccb783a7fb766897ecf6f85d84b63f0"
+   }
+  ]
+ },
+ {
+  "run": "c3_ko_968",
+  "command": [
+   ".tools/xemu/xemu.exe",
+   "-config_path",
+   "out/xemu/runs/c3_ko_968/xemu.toml",
+   "-S",
+   "-qmp",
+   "tcp:127.0.0.1:4444,server,nowait",
+   "-blockdev",
+   "driver=qcow2,node-name=snap,file.driver=file,file.filename=out/xemu/runs/c3_ko_968/snap.qcow2",
+   "-D",
+   "out/xemu/runs/c3_ko_968/trace.log",
+   "-gdb",
+   "tcp:127.0.0.1:1234",
+   "-trace",
+   "enable=nv2a_pgraph_flip_increment_write",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_color",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_zeta",
+   "-trace",
+   "enable=nv2a_irq"
+  ],
+  "inputs": {
+   "xemu": {
+    "path": ".tools/xemu/xemu.exe",
+    "sha256": "7da537938ea2ac09f894186ba793c9ae51dff37c95903b0002273b8d363818b7"
+   },
+   "mcpx": "e99e3a772bf5f5d262786aee895664eb96136196e37732fe66e14ae062f20335",
+   "flash": "3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c",
+   "eeprom": "7d34afba46730a0fba86bc40147e84c4db8066509a5f90ef24d5d56416d47aed"
+  },
+  "patches": [
+   {
+    "addr": "0x8005f897",
+    "old": "535556",
+    "new": "c20800"
+   }
+  ],
+  "images": [
+   {
+    "flip": 60,
+    "fb_sha256": "79bc6789fc76f22080974948375e6a7ec402ddcb13beb896061f88964abada47"
+   },
+   {
+    "flip": 151,
+    "fb_sha256": "bcdda76fe017e8e8fc5a0358516182f4eac8fef79a620d46e44d617a1cf8923b"
+   },
+   {
+    "flip": 240,
+    "fb_sha256": "2ca87cfb3815b2eb4f769f92bb68763d29d495e5e0d6e24daf63f39c0e1f579c"
+   },
+   {
+    "flip": 330,
+    "fb_sha256": "e5347c24588689a0792c84e491e2e97f5e2252e03f2a532942c6db9f2ab4e73b"
+   },
+   {
+    "flip": 421,
+    "fb_sha256": "f7cbe18b4908a018971cb9c1635629220533b0cf7e65516e3b799e7fafacadc8"
+   }
+  ]
+ },
+ {
+  "run": "c3_ko_b5c",
+  "command": [
+   ".tools/xemu/xemu.exe",
+   "-config_path",
+   "out/xemu/runs/c3_ko_b5c/xemu.toml",
+   "-S",
+   "-qmp",
+   "tcp:127.0.0.1:4444,server,nowait",
+   "-blockdev",
+   "driver=qcow2,node-name=snap,file.driver=file,file.filename=out/xemu/runs/c3_ko_b5c/snap.qcow2",
+   "-D",
+   "out/xemu/runs/c3_ko_b5c/trace.log",
+   "-gdb",
+   "tcp:127.0.0.1:1234",
+   "-trace",
+   "enable=nv2a_pgraph_flip_increment_write",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_color",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_zeta",
+   "-trace",
+   "enable=nv2a_irq"
+  ],
+  "inputs": {
+   "xemu": {
+    "path": ".tools/xemu/xemu.exe",
+    "sha256": "7da537938ea2ac09f894186ba793c9ae51dff37c95903b0002273b8d363818b7"
+   },
+   "mcpx": "e99e3a772bf5f5d262786aee895664eb96136196e37732fe66e14ae062f20335",
+   "flash": "3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c",
+   "eeprom": "7d34afba46730a0fba86bc40147e84c4db8066509a5f90ef24d5d56416d47aed"
+  },
+  "patches": [
+   {
+    "addr": "0x800583bf",
+    "old": "55",
+    "new": "c3"
+   }
+  ],
+  "images": [
+   {
+    "flip": 60,
+    "fb_sha256": "10f4d37bc929077c1d41b064466013afdccb783a7fb766897ecf6f85d84b63f0"
+   },
+   {
+    "flip": 151,
+    "fb_sha256": "d9e919e1af3ca3f57a0aa9fbcf3abc44ea9df1984b1215c8b5fa7392545aced1"
+   },
+   {
+    "flip": 241,
+    "fb_sha256": "6d37465b08d005405fe04835e1bcea75be16d6c478f0c2cc5d1ad3610e0ec0e5"
+   },
+   {
+    "flip": 331,
+    "fb_sha256": "645aeb1bf7bb0bfc17f96d0a3d949270704725200d60e049ba423b20e5d631c5"
+   },
+   {
+    "flip": 420,
+    "fb_sha256": "f7cbe18b4908a018971cb9c1635629220533b0cf7e65516e3b799e7fafacadc8"
+   }
+  ]
+ },
+ {
+  "run": "c3_ko_17ec",
+  "command": [
+   ".tools/xemu/xemu.exe",
+   "-config_path",
+   "out/xemu/runs/c3_ko_17ec/xemu.toml",
+   "-S",
+   "-qmp",
+   "tcp:127.0.0.1:4444,server,nowait",
+   "-blockdev",
+   "driver=qcow2,node-name=snap,file.driver=file,file.filename=out/xemu/runs/c3_ko_17ec/snap.qcow2",
+   "-D",
+   "out/xemu/runs/c3_ko_17ec/trace.log",
+   "-gdb",
+   "tcp:127.0.0.1:1234",
+   "-trace",
+   "enable=nv2a_pgraph_flip_increment_write",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_color",
+   "-trace",
+   "enable=nv2a_pgraph_surface_create_zeta",
+   "-trace",
+   "enable=nv2a_irq"
+  ],
+  "inputs": {
+   "xemu": {
+    "path": ".tools/xemu/xemu.exe",
+    "sha256": "7da537938ea2ac09f894186ba793c9ae51dff37c95903b0002273b8d363818b7"
+   },
+   "mcpx": "e99e3a772bf5f5d262786aee895664eb96136196e37732fe66e14ae062f20335",
+   "flash": "3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c",
+   "eeprom": "7d34afba46730a0fba86bc40147e84c4db8066509a5f90ef24d5d56416d47aed"
+  },
+  "patches": [
+   {
+    "addr": "0x80059bcd",
+    "old": "558d6c",
+    "new": "c20400"
+   }
+  ],
+  "images": [
+   {
+    "flip": 61,
+    "fb_sha256": "83bd5a6987e2682d8667e4c5ba890277c19da66c7d0d4553f948da85f5485a62"
+   },
+   {
+    "flip": 151,
+    "fb_sha256": "c610e525ce2a41e26bbc252cdd56e676766b35c4c92ccdefd9bf4ab58ffbeeba"
+   },
+   {
+    "flip": 240,
+    "fb_sha256": "aad1c0eda6b6016998d91d7616b8af0866dfa67ba99ae8ef03d1d916f6f257d5"
+   },
+   {
+    "flip": 330,
+    "fb_sha256": "c27cf5503add2f586f49d8af06bf66b4dbb4a313c81af487ee9f8c937e165562"
+   },
+   {
+    "flip": 421,
+    "fb_sha256": "f7cbe18b4908a018971cb9c1635629220533b0cf7e65516e3b799e7fafacadc8"
+   }
+  ]
+ }
+]

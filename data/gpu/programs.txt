@@ -1,0 +1,153 @@
+; anim+0x958  0x80065b60  28 instructions
+  DP4 oPos.x, v0, c[96]
+  DP4 oPos.y, v0, c[97]
+  DP4 oPos.z, v0, c[98]
+  DP4 oPos.w, v0, c[99]
+  DP4 oT3.x, v0, c[104]
+  DP4 oT3.y, v0, c[105]
+  DP4 oT3.z, v0, c[106]
+  DP4 R2.w, v0, c[107]
+  SLT R3.w, c[96], c[96]
+  MAX oT3.w, R2.w, R3.w
+  MUL R4.xyz, v0.xyz, c[102]
+  ADD R5.xyz, c[100].xyz, -R4.xyz
+  ADD R10.xyz, c[101].xyz, -R4.xyz
+  DP3 R6.x, R5.xyz, R5.xyz
+  DP3 R11.x, R10, R10 + RSQ R1.w, R6
+  DST R7.xyz, R6.x, R1.w + RSQ R1.x, R11
+  DP3 R8.x, R7, c[103]
+  MUL R0.xyz, R1.x, R10.xyz
+  MUL R9.xyz, R1.w, R5 + RCC oD0.xyz, R8
+  DP3 oT1.x, R9.xyz, v1
+  DP3 oT1.y, R9.xyz, v2
+  DP3 oT1.z, R9.xyz, v3
+  ADD R2.xyz, R0.xyz, R9.xyz
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  DP3 oT2.x, R2.xyz, v1
+  DP3 oT2.y, R2.xyz, v2
+  DP3 oT2.z, R2.xyz, v3
+  MAD oPos.xyz, R12, R1.x, c[59]
+
+; anim+0x95c  0x80065998  28 instructions
+  DP4 oPos.x, v0, c[96]
+  DP4 oPos.y, v0, c[97]
+  DP4 oPos.z, v0, c[98]
+  DP4 oPos.w, v0, c[99]
+  DP4 oT3.x, v0, c[104]
+  DP4 oT3.y, v0, c[105]
+  DP4 oT3.z, v0, c[106]
+  DP4 R2.w, v0, c[107]
+  SLT R3.w, c[96], c[96] + MOV oT0.xyzw, v1
+  MAX oT3.w, R2.w, R3.w
+  MUL R4.xyz, v0.xyz, c[102]
+  ADD R5.xyz, c[100].xyz, -R4.xyz
+  ADD R10.xyz, c[101].xyz, -R4.xyz
+  DP3 R6.x, R5.xyz, R5.xyz
+  DP3 R11.x, R10, R10 + RSQ R1.w, R6
+  DST R7.xyz, R6.x, R1.w + RSQ R1.x, R11
+  DP3 R8.x, R7, c[103]
+  MUL R0.xyz, R1.x, R10.xyz
+  MUL R9.xyz, R1.w, R5 + RCC oD0.xyz, R8
+  DP3 oT1.x, R9.xyz, v2
+  DP3 oT1.y, R9.xyz, v3
+  DP3 oT1.z, R9.xyz, v4
+  ADD R2.xyz, R0.xyz, R9.xyz
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  DP3 oT2.x, R2.xyz, v2
+  DP3 oT2.y, R2.xyz, v3
+  DP3 oT2.z, R2.xyz, v4
+  MAD oPos.xyz, R12, R1.x, c[59]
+
+; anim+0x960  0x80065d28  18 instructions
+  DP4 R2.x, v0, c[96]
+  DP4 R2.y, v0, c[97]
+  DP4 R2.z, v0, c[98]
+  DP4 R2.w, v0, c[99]
+  MOV R3.xyzw, R2.z + MOV oPos.xyzw, R2
+  MOV R4.w, R2.w
+  ADD R5.xyz, R3, c[113]
+  SGE R6.w, R3, R3 + RCP R1.xyzw, R4.w
+  MUL R6.xyz, c[112], R5
+  SLT R7.xyz, R3, R3
+  SGE R7.w, R3, R3
+  MAX oD0.xyzw, R6, R7
+  MUL R8.xyz, R2, R1
+  MUL R9.xyz, R8, c[114]
+  ADD oT0.xyz, R9, c[115]
+  SGE oT0.w, R1, R1
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  MAD oPos.xyz, R12, R1.x, c[59]
+
+; blob+0x34  0x800662e8  24 instructions
+  MUL R10.xyz, v0, c[107]
+  DP3 R2.x, R10, R10
+  MUL R11.xyzw, v0, c[106]
+  MOV R10.w, c[104].y + RSQ R1.x, R2
+  ADD R11.xyzw, R11, c[108]
+  MUL R10.xyz, R1.x, R10.xyz
+  MOV R0.xyz, v1.w
+  MOV R0.w, c[104].x
+  MAD R11.xyzw, R10, R0, R11
+  ADD R0.xyz, c[105].xyz, -R11.xyz
+  MOV R2.w, c[104].y
+  DP3 R2.x, R0.xyz, R0.xyz
+  DP4 oPos.x, R11, c[100]
+  MOV R9.w, c[104].y + RSQ R1.x, R2
+  DP4 oPos.y, R11, c[101]
+  MUL R2.xyz, R1.x, R0.xyz
+  MUL R0.xyz, v1, c[107] + MOV oT1.xyzw, R2
+  DP3 R2.x, R0, R0
+  DP4 oPos.w, R11, c[103]
+  DP4 oPos.z, R11, c[102] + RSQ R1.x, R2
+  MUL R9.xyz, R1.x, R0
+  MOV oT0.xyzw, R9
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  MAD oPos.xyz, R12, R1.x, c[59]
+
+; blob+0x38  0x80066470  16 instructions
+  DP3 R2.xyz, v0, c[107] + MOV oT0.xyzw, v0
+  MOV R5.w, c[104].y
+  MUL R3.xyz, R2, c[109]
+  MAD R4.xyz, c[108], v0, R3
+  MOV R8.w, c[104].y
+  ADD R5.xyz, R4, c[106]
+  ADD R6.xyz, c[105].xyz, -R5.xyz
+  DP4 oPos.x, R5, c[100]
+  DP3 R7.x, R6.xyz, R6.xyz
+  DP4 oPos.z, R5, c[102]
+  DP4 oPos.y, R5, c[101] + RSQ R1.x, R7
+  DP4 oPos.w, R5, c[103]
+  MUL R8.xyz, R1.x, R6.xyz
+  MOV oT1.xyzw, R8
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  MAD oPos.xyz, R12, R1.x, c[59]
+
+; fx+0x24  0x80066690  10 instructions
+  MOV oPos.xyzw, v0
+  MOV oT0.xyzw, v1
+  MUL R2.xyzw, v2, c[97]
+  MUL R3.xyzw, v2, c[99]
+  MUL R4.xyzw, v2, c[101]
+  ADD oT1.xyzw, R2, c[96]
+  ADD oT2.xyzw, R3, c[98]
+  ADD oT3.xyzw, R4, c[100]
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  MAD oPos.xyz, R12, R1.x, c[59]
+
+; logo+0xcc  0x80066868  15 instructions
+  DP4 oPos.x, v0, c[96]
+  DP4 oPos.y, v0, c[97]
+  DP4 oPos.z, v0, c[98]
+  DP4 oPos.w, v0, c[99]
+  MOV R2.xyz, c[101].xyz
+  ADD R3.xyz, c[100].xyz, -R2.xyz
+  MOV R5.xyz, c[103].xyz
+  MAD R4.xyz, R3.xyz, v1.y, c[101].xyz
+  ADD R6.xyz, c[102].xyz, -R5.xyz
+  MUL oPos.xyz, R12, c[58] + RCC R1.x, R12.w
+  MAD R7.xyz, R6.xyz, v1.y, c[103].xyz
+  MAD R8.xyz, R4.xyz, c[104].xyz, R7.xyz
+  MUL R9.xyz, R7.xyz, c[104].xyz
+  ADD oD0.xyz, R8.xyz, -R9.xyz
+  MAD oPos.xyz, R12, R1.x, c[59]
+

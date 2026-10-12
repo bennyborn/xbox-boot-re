@@ -1,0 +1,267 @@
+{
+ "source": "tools/xemu/vectors_c2.py; runs in out/xemu/runs/, see docstring",
+ "xemu_sha256": "7da537938ea2ac09f894186ba793c9ae51dff37c95903b0002273b8d363818b7",
+ "break_2bl": {
+  "run": "c2_break2bl",
+  "eip_gdb": "0x0009024c",
+  "ram_0x90000_0x96000_sha256": "34390a1a0a91435c10a4d116b7d9942c65d6880e4ec1c3a09870c4281698a402",
+  "equals_out_rom_2bl_bin": true
+ },
+ "kernel_text_in_ram": {
+  "run": "c2final_A",
+  "frame": 90,
+  "section": ".text",
+  "physical": [
+   "0x102c0",
+   "0x358f0"
+  ],
+  "bytes": 153136,
+  "bytes_differing_from_kernel_img": 174,
+  "first_differing_va": [
+   "0x8002464f",
+   "0x80024650",
+   "0x80024651",
+   "0x80024653",
+   "0x800261b3",
+   "0x800261b4",
+   "0x800261b5",
+   "0x800261b6"
+  ]
+ },
+ "flip_timing": [
+  {
+   "run": "c2final_A",
+   "flips": 313,
+   "vblanks_at_last_flip": 405,
+   "interval_vblanks_histogram": {
+    "1": 234,
+    "2": 64,
+    "3": 4,
+    "4": 1,
+    "5": 1
+   },
+   "flips_with_interval_2": [
+    3,
+    4,
+    8,
+    10,
+    37,
+    38,
+    43,
+    44,
+    45,
+    61,
+    65,
+    74,
+    76,
+    77,
+    81,
+    82,
+    84,
+    85,
+    95,
+    97,
+    99,
+    101,
+    102,
+    104,
+    106,
+    107,
+    111,
+    112,
+    114,
+    118,
+    121,
+    123,
+    126,
+    128,
+    129,
+    130,
+    131,
+    133,
+    134,
+    135
+   ]
+  },
+  {
+   "run": "c2final_B",
+   "flips": 312,
+   "vblanks_at_last_flip": 401,
+   "interval_vblanks_histogram": {
+    "0": 1,
+    "1": 236,
+    "2": 62,
+    "3": 3,
+    "4": 1
+   },
+   "flips_with_interval_2": [
+    39,
+    40,
+    41,
+    43,
+    46,
+    69,
+    79,
+    92,
+    94,
+    98,
+    101,
+    103,
+    104,
+    107,
+    109,
+    110,
+    112,
+    119,
+    123,
+    128,
+    130,
+    133,
+    134,
+    139,
+    142,
+    143,
+    145,
+    149,
+    153,
+    156,
+    158,
+    160,
+    161,
+    162,
+    163,
+    165,
+    167,
+    168,
+    169,
+    170
+   ]
+  }
+ ],
+ "determinism": [
+  {
+   "frame": 90,
+   "vblanks": {
+    "A": 125,
+    "B": 107
+   },
+   "methods": {
+    "A": 37181,
+    "B": 37181
+   },
+   "ram_sha256": {
+    "A": "dda33a1e7e8de3b6be17c5c44172806d9253c9190122518572e880c03ebc00db",
+    "B": "791c75d50e1167bf1017ab2d991fb0631cc33f82e485ff585c62af891b587970"
+   },
+   "ram_bytes_differing": 5125612,
+   "ram_by_region": {
+    "kernel .data": 183,
+    "kernel INIT": 1807,
+    "other": 111455,
+    "pushbuffer": 480636,
+    "surface 0x2c06000": 780741,
+    "surface 0x2e06000": 768571,
+    "surface 0x306b000": 171189,
+    "surface 0x30eb000": 229996,
+    "surface 0x32a4000": 589281,
+    "surface 0x33d0000": 641810,
+    "surface 0x3628000": 1349943
+   },
+   "image_mean_abs_diff": 4.92,
+   "image_pixels_differing": 263254,
+   "state_fields_differing": {
+    "PCIBUS": 1,
+    "cpu": 22,
+    "cpu_common": 1,
+    "i8254": 3,
+    "i8259": 3,
+    "mc146818rtc": 5,
+    "pci.0:05.0/mcpx-apu": 73,
+    "pci.0:1e.0:00.0/nv2a": 956,
+    "timer": 2
+   }
+  },
+  {
+   "frame": 150,
+   "vblanks": {
+    "A": 226,
+    "B": 194
+   },
+   "methods": {
+    "A": 37181,
+    "B": 37181
+   },
+   "ram_sha256": {
+    "A": "040a050b1653642bf9f8f2bfbf8d717da2963bec264a1fd16afd313a4a9b9358",
+    "B": "84b5cd0edaa2ba269f09ba0ed3296d51c3df450c32dd384bfb7e9bf6aa9bccfc"
+   },
+   "ram_bytes_differing": 6950727,
+   "ram_by_region": {
+    "kernel .data": 285,
+    "kernel INIT": 1885,
+    "other": 45398,
+    "pushbuffer": 873589,
+    "surface 0x2c06000": 1581075,
+    "surface 0x2e06000": 1433831,
+    "surface 0x306b000": 148695,
+    "surface 0x30eb000": 172433,
+    "surface 0x32a4000": 601342,
+    "surface 0x33d0000": 791001,
+    "surface 0x3628000": 1301193
+   },
+   "image_mean_abs_diff": 9.281,
+   "image_pixels_differing": 300917,
+   "state_fields_differing": {
+    "cpu": 20,
+    "i8254": 3,
+    "mc146818rtc": 5,
+    "pci.0:05.0/mcpx-apu": 81,
+    "pci.0:1e.0:00.0/nv2a": 76,
+    "timer": 2
+   }
+  },
+  {
+   "frame": 210,
+   "vblanks": {
+    "A": 302,
+    "B": 297
+   },
+   "methods": {
+    "A": 795,
+    "B": 37874
+   },
+   "ram_sha256": {
+    "A": "1d22393fe72dde0a07654fb8e1cd19ebc3e2384246ede84b25fd0f2dbf48dccb",
+    "B": "c17a5d6f9666d039d71a70ee1633af60cdaef56ec9aeaeae12758448d797f2da"
+   },
+   "ram_bytes_differing": 12745342,
+   "ram_by_region": {
+    "kernel .data": 437,
+    "kernel INIT": 1874,
+    "other": 1182808,
+    "pushbuffer": 820680,
+    "surface 0x2054000": 3823176,
+    "surface 0x2454000": 1052543,
+    "surface 0x2c06000": 929802,
+    "surface 0x2e06000": 1122459,
+    "surface 0x306b000": 237437,
+    "surface 0x30eb000": 119563,
+    "surface 0x32a4000": 921600,
+    "surface 0x33d0000": 2532963
+   },
+   "image_mean_abs_diff": 167.989,
+   "image_pixels_differing": 307200,
+   "state_fields_differing": {
+    "PCIBUS": 1,
+    "cpu": 31,
+    "cpu_common": 1,
+    "i8254": 3,
+    "i8259": 3,
+    "mc146818rtc": 5,
+    "pci.0:05.0/mcpx-apu": 62,
+    "pci.0:1e.0:00.0/nv2a": 643,
+    "timer": 2
+   }
+  }
+ ]
+}

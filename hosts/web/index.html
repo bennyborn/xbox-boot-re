@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xboot: Workbench</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0b0c0e; --stage: #050506; --panel: #131518; --panel2: #191c20; --line: #262a30; --line2: #33383f;
+    --text: #dfe3e8; --dim: #8b939d; --faint: #5d646d;
+    --accent: #6fe84f; --accent-ink: #0b1408; --warn: #ffb347;
+    --bar: 78px;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 13px/1.45 system-ui, "Segoe UI", sans-serif; }
+  button, select, input { font: inherit; color: inherit; }
+  .app { display: grid; grid-template-columns: minmax(0, 1fr) 400px; height: 100vh; }
+
+  /* ---- the stage ---- */
+  .stage { position: relative; background: var(--stage); display: flex; flex-direction: column; align-items: center;
+           justify-content: center; gap: 10px; padding: 16px; min-width: 0; overflow: hidden; }
+  .screen-wrap { position: relative; width: min(100%, calc((100vh - 42px - var(--bar)) * 4 / 3)); aspect-ratio: 4 / 3; flex: none; }
+  .sound .screen-wrap { width: min(100%, calc(52vh * 4 / 3)); }
+  /* without the original's resolution: the picture in the shape of the stage */
+  .wide .screen-wrap { width: 100%; height: 100%; aspect-ratio: auto; flex: 1 1 auto; min-height: 0; }
+  .wide.sound .screen-wrap { flex: none; height: 52vh; }
+  canvas#screen { display: block; width: 100%; height: 100%; background: #000; cursor: grab; touch-action: none; }
+  canvas#screen.hovering { cursor: pointer; }
+  canvas#screen:active { cursor: grabbing; }
+  .statusline { position: absolute; left: 10px; top: 8px; display: flex; flex-wrap: wrap; gap: 4px 6px; pointer-events: none;
+                font: 11.5px/1.2 var(--mono); max-width: calc(100% - 20px); opacity: 0; transition: opacity .15s; }
+  .screen-wrap:hover :is(.statusline, .hints) { opacity: 1; }
+  .statusline span { background: rgba(0,0,0,0.62); border: 1px solid rgba(255,255,255,0.08); padding: 3px 7px; border-radius: 4px;
+                     color: #cfd5dc; backdrop-filter: blur(4px); white-space: nowrap; }
+  .statusline span b { color: var(--accent); font-weight: 600; }
+  .hints { position: absolute; left: 10px; bottom: 8px; right: 10px; font-size: 11.5px; color: rgba(230,235,240,0.62);
+           pointer-events: none; text-shadow: 0 0 3px #000; display: flex; flex-wrap: wrap; gap: 2px 12px; opacity: 0; transition: opacity .15s; }
+  .hints > span { background: rgba(0,0,0,0.55); padding: 2px 6px; border-radius: 4px; }
+  .hints kbd { font: 10.5px var(--mono); border: 1px solid rgba(255,255,255,0.25); border-bottom-width: 2px; border-radius: 3px; padding: 0 4px; color: #e8ecef; }
+  .hovertag { position: absolute; pointer-events: none; background: rgba(8,9,10,0.88); border: 1px solid var(--accent);
+              border-radius: 4px; padding: 3px 8px; font-size: 12px; white-space: nowrap; z-index: 3; transform: translate(12px, 12px); }
+  .hovertag small { color: var(--dim); margin-left: 6px; }
+  .tracks { width: 100%; flex: 1 1 auto; min-height: 0; overflow: auto; border: 1px solid var(--line); border-radius: 6px; background: #0c0d0f;
+            display: grid; grid-template-columns: 250px minmax(0, 1fr); align-content: start; }
+  .tracks[hidden] { display: none; }
+  .tv-head { border-right: 1px solid var(--line); }
+  .tv-row { height: 34px; display: grid; grid-template-columns: 22px 22px minmax(0, 1fr) 70px; grid-template-rows: 1fr 4px;
+            align-items: center; gap: 0 5px; padding: 2px 8px 2px 6px; border-bottom: 1px solid var(--line); }
+  .tv-row.muted { opacity: 0.45; }
+  .tv-btn { width: 22px; height: 20px; padding: 0; border: 1px solid var(--line2); border-radius: 3px; background: var(--panel2);
+            font: 600 10.5px var(--mono); color: var(--dim); cursor: pointer; }
+  .tv-btn.on { background: #e05a4a; color: #fff; border-color: #e05a4a; }
+  .tv-btn.solo.on { background: #f2c94c; color: #1b1500; border-color: #f2c94c; }
+  .tv-name { min-width: 0; display: flex; flex-direction: column; line-height: 1.1; }
+  .tv-name b { font-size: 12px; }
+  .tv-name span { font-size: 10.5px; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tv-note { font: 11px var(--mono); color: var(--accent); text-align: right; }
+  .tv-meter { grid-column: 1 / -1; height: 3px; background: var(--line); border-radius: 2px; overflow: hidden; }
+  .tv-meter i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), #f2c94c 80%, #e05a4a); }
+  .tv-roll { position: relative; }
+  .tv-roll canvas { display: block; width: 100%; cursor: crosshair; }
+  .tv-tip { position: absolute; z-index: 2; width: 220px; background: rgba(8,9,10,0.94); border: 1px solid var(--line2); border-radius: 5px;
+            padding: 6px 8px; font-size: 11.5px; pointer-events: none; }
+  .tv-progress { grid-column: 1 / -1; padding: 16px; color: var(--dim); }
+
+  /* ---- the panel ---- */
+  .panel { background: var(--panel); border-left: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+  .brand { display: flex; align-items: baseline; gap: 8px; padding: 12px 16px 8px; }
+  .brand b { font-size: 15px; letter-spacing: 0.02em; }
+  .brand span { color: var(--dim); font-size: 12px; }
+  .tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 0 12px 10px; position: sticky; top: 0; background: var(--panel); z-index: 2; border-bottom: 1px solid var(--line); padding-top: 4px; }
+  .tabs button { border: 1px solid var(--line2); background: var(--panel2); border-radius: 6px; padding: 6px 0; cursor: pointer; color: var(--dim); font-weight: 600; }
+  .tabs button[aria-selected=true] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .page[hidden] { display: none; }
+  .sec { border-bottom: 1px solid var(--line); padding: 10px 16px 12px; }
+  details.sec > summary { cursor: pointer; list-style: none; font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase;
+                          color: var(--dim); display: flex; align-items: center; gap: 6px; margin: -2px 0; }
+  details.sec > summary::before { content: "▸"; font-size: 10px; transition: transform .15s; }
+  details.sec[open] > summary::before { transform: rotate(90deg); }
+  details.sec[open] > summary { margin-bottom: 10px; }
+  .sec h3 { margin: 0 0 8px; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+  .sub { margin: 10px 0 6px; font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; }
+  .row { display: flex; align-items: center; gap: 8px; margin: 6px 0; flex-wrap: wrap; }
+  .row > label:first-child, .lbl { color: var(--dim); min-width: 92px; }
+  select, input[type=text] { background: var(--panel2); border: 1px solid var(--line2); border-radius: 5px; padding: 4px 6px; min-width: 0; }
+  select { flex: 1; }
+  .btn { border: 1px solid var(--line2); background: var(--panel2); border-radius: 5px; padding: 4px 10px; cursor: pointer; }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  .btn.icon { width: 34px; padding: 4px 0; text-align: center; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line2); border-radius: 999px; padding: 3px 10px 3px 4px;
+          cursor: pointer; user-select: none; background: var(--panel2); }
+  .chip input { appearance: none; width: 26px; height: 15px; border-radius: 999px; background: var(--line2); position: relative; margin: 0; cursor: pointer; transition: background .15s; }
+  .chip input::after { content: ""; position: absolute; left: 2px; top: 2px; width: 11px; height: 11px; border-radius: 50%; background: #c9ced4; transition: left .15s; }
+  .chip input:checked { background: var(--accent); }
+  .chip input:checked::after { left: 13px; background: var(--accent-ink); }
+  .seg { display: inline-flex; border: 1px solid var(--line2); border-radius: 6px; overflow: hidden; flex-wrap: wrap; }
+  .seg button { border: 0; background: var(--panel2); padding: 4px 10px; cursor: pointer; color: var(--dim); border-right: 1px solid var(--line2); }
+  .seg button:last-child { border-right: 0; }
+  .seg button.on { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  input[type=range] { accent-color: var(--accent); flex: 1; min-width: 80px; }
+  input[type=color] { width: 34px; height: 26px; padding: 0; border: 1px solid var(--line2); border-radius: 5px; background: none; }
+  .swatches { display: flex; gap: 5px; flex-wrap: wrap; }
+  .swatches button { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--panel); outline: 1px solid var(--line2); cursor: pointer; padding: 0; }
+  .note { color: var(--dim); font-size: 12px; margin: 6px 0 0; }
+  .warn { color: var(--warn); font-size: 12px; display: flex; gap: 8px; align-items: center; margin-top: 6px; }
+  .warn[hidden] { display: none; }
+  table.kv { width: 100%; border-collapse: collapse; font: 11.5px/1.4 var(--mono); }
+  table.kv td { padding: 2px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.kv td:first-child { color: var(--dim); font-family: system-ui, sans-serif; white-space: nowrap; }
+  .scroll { max-height: 260px; overflow: auto; border: 1px solid var(--line); border-radius: 5px; }
+  table.grid { border-collapse: collapse; font: 11px/1.3 var(--mono); width: 100%; }
+  table.grid th { position: sticky; top: 0; background: var(--panel2); color: var(--dim); font-weight: 500; text-align: right; padding: 3px 5px; }
+  table.grid td { text-align: right; padding: 2px 5px; border-top: 1px solid var(--line); white-space: nowrap; }
+  table.grid td:first-child, table.grid th:first-child { text-align: left; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 10px; font-size: 12px; }
+
+  /* ---- the bar under the picture: playback ---- */
+  .bar { width: 100%; flex: none; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 4px 12px;
+         background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
+  .transport { display: flex; gap: 6px; align-items: center; }
+  .time { font: 12px/1.25 var(--mono); color: var(--dim); text-align: right; white-space: nowrap; }
+  .time b { color: var(--text); font-weight: 600; }
+  .timeline-wrap { position: relative; padding-top: 2px; }
+  #timeline { width: 100%; margin: 0; display: block; }
+  #events { position: relative; height: 12px; margin: 0 7px; }
+  .event { position: absolute; top: 0; width: 3px; height: 10px; padding: 0; margin-left: -1px; border: 0; background: #e8c547; cursor: pointer; border-radius: 1px; }
+  .event.pulse { background: #4aa3df; height: 6px; top: 4px; }
+  .event:hover { transform: scaleX(1.8); }
+  .bar-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+  .bar-opts .speed { display: flex; align-items: center; gap: 6px; color: var(--dim); }
+  .bar-opts .speed input { width: 110px; flex: none; }
+  .bar-opts .chips { gap: 6px; }
+  .bar-opts .warn { margin: 0; }
+  #values { margin: 0; font: 11.5px/1.45 var(--mono); white-space: pre-wrap; color: var(--dim); }
+
+  /* ---- parts, selection, spec ---- */
+  #parts { display: flex; flex-direction: column; gap: 8px; }
+  #parts fieldset { border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px 6px; margin: 0; }
+  #parts legend { color: var(--dim); font-size: 11.5px; padding: 0 4px; }
+  .part { display: flex; gap: 4px; align-items: center; }
+  .part label { flex: 1; display: flex; gap: 6px; align-items: center; }
+  .part button, #parts fieldset > button { border: 1px solid var(--line2); background: var(--panel2); border-radius: 4px; padding: 0 6px; cursor: pointer; font-size: 11.5px; }
+  #parts fieldset > button { margin: 2px; }
+  .swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  #selection { background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent); }
+  #selection[hidden] { display: none; }
+  #selection .title { font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+  #selection pre { font: 11.5px/1.4 var(--mono); white-space: pre-wrap; margin: 6px 0; color: var(--dim); }
+  #spec { max-height: 60vh; overflow: auto; padding-right: 4px; }
+  #spec h2 { font-size: 15px; margin: 4px 0; }
+  #spec h3 { font-size: 12px; color: var(--dim); margin: 14px 0 4px; text-transform: none; letter-spacing: 0; }
+  #spec table { border-collapse: collapse; font-size: 11.5px; margin: 6px 0; }
+  #spec td { border: 1px solid var(--line); padding: 2px 6px; vertical-align: top; }
+  #spec pre { background: #0e1012; padding: 6px; font: 11.5px var(--mono); overflow-x: auto; white-space: pre; }
+  #spec pre.facts { white-space: pre-wrap; }
+  #spec code { color: #e8c547; }
+  #status { padding: 8px 16px 14px; color: var(--faint); font-size: 11.5px; margin-top: auto; }
+  #scope { width: 100%; height: 70px; display: block; background: #0c0d0f; border: 1px solid var(--line); border-radius: 5px; }
+
+  /* ---- narrow windows: the panel below the stage ---- */
+  @media (max-width: 1000px) {
+    .app { grid-template-columns: minmax(0, 1fr); height: auto; }
+    .stage { padding: 10px; }
+    .screen-wrap, .sound .screen-wrap { width: min(100%, calc(70vh * 4 / 3)); }
+    .wide .screen-wrap, .wide.sound .screen-wrap { width: 100%; flex: none; height: 70vh; }
+    .panel { border-left: 0; border-top: 1px solid var(--line); overflow: visible; }
+    .tracks { grid-template-columns: 170px minmax(0, 1fr); max-height: 60vh; }
+  }
+  /* full screen: the canvas alone, also with F11 */
+  .stage:fullscreen, body.canvas-only .stage { padding: 0; background: #000; }
+  .stage:fullscreen .screen-wrap, body.canvas-only .screen-wrap { width: min(100vw, calc(100vh * 4 / 3)); }
+  .stage.wide:fullscreen .screen-wrap, body.canvas-only .wide .screen-wrap { width: 100vw; height: 100vh; }
+  .stage:fullscreen :is(.statusline, .hints, .tracks, .hovertag, .bar),
+  body.canvas-only :is(.statusline, .hints, .tracks, .hovertag, .panel, .bar) { display: none !important; }
+  body.canvas-only .app { grid-template-columns: 1fr; }
+</style>
+</head>
+<body>
+<div class="app">
+  <main class="stage" id="stage">
+    <div class="screen-wrap" id="screenWrap">
+      <canvas id="screen"></canvas>
+      <div class="statusline" id="statusline"></div>
+      <div class="hovertag" id="hovertag" hidden></div>
+      <div class="hints" id="hints"></div>
+    </div>
+    <div class="bar" id="bar">
+      <div class="transport">
+        <button class="btn icon" id="start" title="To the start (Home)">⏮</button>
+        <button class="btn icon" id="back" title="One frame back (←)">◀︎|</button>
+        <button class="btn primary" id="play" style="min-width:86px" title="Space">▶ Play</button>
+        <button class="btn icon" id="forward" title="One frame forward (→)">|▶︎</button>
+      </div>
+      <div class="timeline-wrap">
+        <input type="range" id="timeline" min="0" max="8000" step="1" value="0" aria-label="Timeline in milliseconds">
+        <div id="events" title="Events: yellow from the narratives, blue the twelve pulses (Timing.md 4)"></div>
+      </div>
+      <div class="time" id="time"></div>
+      <div class="bar-opts">
+        <label class="speed" for="speed">Speed <input type="range" id="speed" min="0.1" max="2" step="0.05" value="1"><span id="speedV" style="width:38px">1.00×</span></label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="loop" checked> Loop</label>
+          <label class="chip"><input type="checkbox" id="sound" checked> Sound</label>
+          <label class="chip" title="Picture in 640 × 480 and 4:3 like the original, scaled up; otherwise in the size and shape of the stage, the 4:3 crop in the middle"><input type="checkbox" id="native"> Original resolution</label>
+          <label class="chip" id="selChip" title="Mark parts in the picture on hover and choose by click (A)"><input type="checkbox" id="sel"> Choose parts</label>
+        </div>
+        <div class="warn" id="muteHint" hidden><span id="muteText"></span><button class="btn" id="muteClear">clear</button></div>
+      </div>
+    </div>
+    <div class="tracks" id="tracks" hidden></div>
+  </main>
+
+  <aside class="panel" id="panel">
+    <div class="brand"><b>xboot</b><span>Workbench for the boot animation, from the BIOS alone</span></div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="intro">Intro</button>
+      <button role="tab" data-tab="models">Models</button>
+      <button role="tab" data-tab="blob">Blob</button>
+      <button role="tab" data-tab="sound">Sound</button>
+      <button role="tab" data-tab="nextgen" title="The intro, 25 years later: raytracing, god rays, particles, bloom, depth of field (N)">Next Gen</button>
+    </nav>
+
+    <!-- ===== Intro ===== -->
+    <div class="page" data-page="intro">
+      <section class="sec">
+        <div class="row"><label for="path">Camera path</label><select id="path"></select></div>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="orig" checked> Original shaders</label>
+          <label class="chip"><input type="checkbox" id="coarse"> Coarse detail level</label>
+          <label class="chip"><input type="checkbox" id="halo" checked> Halo</label>
+          <label class="chip"><input type="checkbox" id="shadow" checked> Shadow</label>
+          <label class="chip"><input type="checkbox" id="free"> Free camera</label>
+          <label class="chip"><input type="checkbox" id="showPath"> Show camera path</label>
+        </div>
+        <div class="row" style="margin-top:10px"><label>Wireframe</label>
+          <div class="seg" id="wireSeg"><button data-v="0">off</button><button data-v="1">over the picture</button><button data-v="2">alone</button></div>
+        </div>
+        <div class="row"><button class="btn" id="allParts">Show all</button><span id="soloNote" class="note"></span></div>
+      </section>
+      <details class="sec">
+        <summary>Parts</summary>
+        <div id="parts"></div>
+      </details>
+      <details class="sec">
+        <summary>Targets and textures</summary>
+        <div class="row"><label for="view">Show</label><select id="view">
+          <option value="picture">Picture</option>
+          <option value="light0">Light view downward (U1)</option>
+          <option value="light1">Light view upward (U1)</option>
+          <option value="fx">Target of the veil (U2, U3)</option>
+          <option value="logo">Texture of the logo (U4)</option>
+          <option value="tex0">Texture: cube of directions 128</option>
+          <option value="tex1">Texture: cube of directions 64</option>
+          <option value="tex2">Texture: normal map</option>
+          <option value="tex3">Texture: falloff</option>
+          <option value="tex4">Texture: gradient A</option>
+          <option value="tex5">Texture: radial B</option>
+          <option value="tex6">Texture: gradient C</option>
+          <option value="tex7">Texture: TM</option>
+          <option value="tex8">Texture: noise</option>
+        </select></div>
+      </details>
+    </div>
+
+    <!-- ===== Models ===== -->
+    <div class="page" data-page="models" hidden>
+      <section class="sec">
+        <div class="row"><label for="model">Model</label><select id="model"></select></div>
+        <div class="row"><label>Shading</label><div class="seg" id="mShading"><button data-v="original">original</button><button data-v="flat">flat</button></div></div>
+        <div class="row"><label>Light</label><div class="seg" id="mLight"><button data-v="camera">at the camera</button><button data-v="origin">at the origin</button></div></div>
+        <div class="row"><label for="mBright">Brightness</label><input type="range" id="mBright" min="0.2" max="2.5" step="0.05" value="1"><span id="mBrightV" class="note" style="margin:0;width:34px">1.00</span></div>
+        <div class="row"><label for="mHighlight">Highlight</label><select id="mHighlight"></select></div>
+        <div class="sub">For checking</div>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="mCoarse"> coarse</label>
+          <label class="chip"><input type="checkbox" id="mWire"> wireframe</label>
+          <label class="chip"><input type="checkbox" id="mCull"> backface culling</label>
+          <label class="chip"><input type="checkbox" id="mSpin"> auto-rotation</label>
+          <label class="chip"><input type="checkbox" id="mNormals"> normals</label>
+          <label class="chip"><input type="checkbox" id="mTangents"> tangents</label>
+          <label class="chip"><input type="checkbox" id="mAxes"> axes</label>
+          <label class="chip"><input type="checkbox" id="mBox"> bounding box</label>
+        </div>
+      </section>
+      <section class="sec">
+        <h3>Model</h3>
+        <table class="kv" id="mStats"></table>
+        <p class="note" id="mNote"></p>
+        <button class="btn" id="mSpec">§ Specification</button>
+      </section>
+    </div>
+
+    <!-- ===== Blob ===== -->
+    <div class="page" data-page="blob" hidden>
+      <section class="sec">
+        <div class="row"><label>Background</label><div class="seg" id="bBg"><button data-v="black">black</button><button data-v="grey">grey</button><button data-v="light">light grey</button><button data-v="scene">scene</button></div></div>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="bOrig" checked> Original shaders</label>
+          <label class="chip"><input type="checkbox" id="bWire"> Wireframe</label>
+          <label class="chip"><input type="checkbox" id="bHalo" checked> Halo</label>
+          <label class="chip"><input type="checkbox" id="bDrops" checked> small drops</label>
+        </div>
+        <div class="sub">Diagnostics</div>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="bMarkers"> Markers on the surface</label>
+          <label class="chip"><input type="checkbox" id="bXray"> See through the surface</label>
+          <label class="chip"><input type="checkbox" id="bTrails"> Trails of the drops</label>
+        </div>
+      </section>
+      <section class="sec">
+        <h3>Live</h3>
+        <table class="kv" id="bLive"></table>
+      </section>
+      <details class="sec">
+        <summary>Bulges and drops in detail</summary>
+        <div class="scroll" id="bDetail"></div>
+      </details>
+    </div>
+
+    <!-- ===== Sound ===== -->
+    <div class="page" data-page="sound" hidden>
+      <section class="sec">
+        <div class="row">
+          <button class="btn" id="sndClear">Clear mute and solo</button>
+        </div>
+        <div class="row"><label for="sndVol">Volume</label><input type="range" id="sndVol" min="0" max="1.5" step="0.01" value="1"><span id="sndVolV" class="note" style="margin:0;width:38px">100 %</span></div>
+        <div class="row"><label>Scope</label><div class="seg" id="scopeSeg"><button data-v="wave">Waveform</button><button data-v="spectrum">Spectrum</button></div></div>
+        <canvas id="scope"></canvas>
+        <div class="sub">Layers of the view</div>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="lyNotes" checked> Notes</label>
+          <label class="chip"><input type="checkbox" id="lyVolume" checked> Volume</label>
+          <label class="chip"><input type="checkbox" id="lyEvents" checked> Events</label>
+          <label class="chip"><input type="checkbox" id="lyGrid" checked> Grid</label>
+        </div>
+      </section>
+      <section class="sec">
+        <h3>Legend</h3>
+        <div class="legend" id="legend"></div>
+        <p class="note">Sounds after Audio.md 3.5. Bars: notes, the height within the row by pitch; a tick at the front means struck, pale means only the pitch changed. Area: gain of the channel. Marks at the bottom: ▲ sample, red release, blue filter, orange level.</p>
+      </section>
+    </div>
+
+    <!-- ===== Next Gen ===== -->
+    <div class="page" data-page="nextgen" hidden>
+      <section class="sec" id="ngSec">
+        <div class="row"><label>Quality</label><div class="seg" id="ngQuality"><button data-v="fast">fast</button><button data-v="high">high</button><button data-v="ultra">ultra</button></div></div>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="ngReflect"> Raytracing</label>
+          <label class="chip"><input type="checkbox" id="ngRays"> God rays</label>
+          <label class="chip"><input type="checkbox" id="ngParticles"> Particles</label>
+          <label class="chip"><input type="checkbox" id="ngBloom"> Bloom</label>
+          <label class="chip"><input type="checkbox" id="ngDof"> Depth of field</label>
+          <label class="chip" title="Light that the walls throw onto each other, by raytracing"><input type="checkbox" id="ngGi"> Global illumination</label>
+          <label class="chip" title="Temporal anti-aliasing: averages over frames, while still up to supersampling"><input type="checkbox" id="ngTaa"> TAA</label>
+        </div>
+        <p class="note">A reinterpretation of our own, not from the BIOS: the scene, light and time come from the core, the look is new. Camera path, halo and hidden parts as in the Intro tab. <span id="ngNote"></span></p>
+      </section>
+    </div>
+
+    <!-- ===== common to all tabs ===== -->
+    <section class="sec" id="selection" hidden>
+      <div class="title"><span class="swatch" id="selSwatch"></span><span id="selName"></span></div>
+      <pre id="selFacts"></pre>
+      <div class="row">
+        <button class="btn" id="selSolo">alone</button>
+        <button class="btn" id="selHide">hide</button>
+        <button class="btn" id="selModel">to Models</button>
+        <button class="btn" id="selSpec">§</button>
+        <button class="btn" id="selClear" style="margin-left:auto">×</button>
+      </div>
+    </section>
+
+    <details class="sec" id="playground" open>
+      <summary>Playground</summary>
+      <div class="row"><label>Scene colour</label><input type="color" id="pgColour" value="#40ff26">
+        <div class="swatches" id="pgSwatches"></div></div>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" id="pgRoom"> white room</label>
+      </div>
+      <div class="row"><button class="btn" id="pgReset">Reset</button><span class="note" style="margin:0">Reinterpreted, not from the BIOS.</span></div>
+    </details>
+
+    <details class="sec">
+      <summary>Values from the core</summary>
+      <pre id="values"></pre>
+    </details>
+
+    <details class="sec">
+      <summary>Export</summary>
+      <div class="row">
+        <button class="btn" id="shot">Screenshot (PNG)</button>
+        <button class="btn" id="link">Copy link with time</button>
+        <button class="btn" id="full">Fullscreen</button>
+      </div>
+      <p class="note" id="exportNote"></p>
+    </details>
+
+    <details class="sec" id="specSec" open>
+      <summary>Specification</summary>
+      <div id="spec"></div>
+    </details>
+    <div id="status">loading …</div>
+  </aside>
+</div>
+<script>
+  // On demand (shot.mjs) nobody sees the console: report what fails to load.
+  if (location.search) {
+    const report = (e) => fetch('/error', { method: 'POST', body: String(e.reason?.stack || e.reason || e.message) });
+    addEventListener('error', report);
+    addEventListener('unhandledrejection', report);
+  }
+</script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
