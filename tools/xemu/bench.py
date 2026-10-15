@@ -60,7 +60,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 XEMU = {'release': os.path.join(ROOT, '.tools', 'xemu', 'xemu.exe'),
         'dbg': os.path.join(ROOT, '.tools', 'xemu-dbg', 'xemu.exe')}
 MCPX = os.path.join(ROOT, 'rom', 'mcpx_1.0.bin')
-FLASH = os.path.join(ROOT, 'rom', 'bios_retail_4627.bin')
+FLASH = os.path.join(ROOT, 'rom', 'bios_complex_4627_retail.bin')
 EEPROM = os.path.join(ROOT, 'out', 'xemu', 'eeprom.bin')
 RUNS = os.path.join(ROOT, 'out', 'xemu', 'runs')
 

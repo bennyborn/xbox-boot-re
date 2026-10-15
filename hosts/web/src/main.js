@@ -28,7 +28,7 @@
 //   &view=light0             a target or texture instead of the picture
 //   &pick=x,y                the draw at that pixel, in the meta as `picked`
 import { Core, Run, DRAWS_MAX, PARAMS_MAX, AUDIO_RATE } from './core.js';
-import { Gpu } from './gpu.js';
+import { Gpu, NoWebGpuSupport, NoWebGpuAdapter } from './gpu.js';
 import { Renderer } from './renderer.js';
 import { NextGen } from './nextgen.js';
 import { renderOffline } from './sound.js';
@@ -192,6 +192,10 @@ try {
     $('status').textContent = String(e);
     if (query.has('shot') || query.has('ticks') || query.has('audiotest'))
         await post('/error', String(e.stack || e));
+    else if (e instanceof NoWebGpuSupport || e instanceof NoWebGpuAdapter)
+        $('gpuError').hidden = false, $('gpuErrorBody').textContent = e instanceof NoWebGpuSupport
+            ? 'This browser has no WebGPU support (enabled). The animation needs a recent version of Chrome, Edge or Firefox with WebGPU enabled.'
+            : 'This browser supports WebGPU, but found no graphics adapter to use. Hardware acceleration may be turned off, or the GPU driver is outdated or blocklisted.';
     else
         throw e;
 }

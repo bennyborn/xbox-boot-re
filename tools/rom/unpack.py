@@ -1,6 +1,6 @@
 """Opens the BIOS: decrypts the 2BL, checks it, decrypts and unpacks the kernel.
 
-    python tools/rom/unpack.py [--rom rom/bios_retail_4627.bin]
+    python tools/rom/unpack.py [--rom rom/bios_complex_4627_retail.bin]
                                [--mcpx rom/mcpx_1.0.bin] [--out out/rom]
 
 Writes to the output folder:
@@ -139,7 +139,7 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.normpath(os.path.join(here, "..", ".."))
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--rom", default=os.path.join(root, "rom", "bios_retail_4627.bin"))
+    ap.add_argument("--rom", default=os.path.join(root, "rom", "bios_complex_4627_retail.bin"))
     ap.add_argument("--mcpx", default=os.path.join(root, "rom", "mcpx_1.0.bin"))
     ap.add_argument("--out", default=os.path.join(root, "out", "rom"))
     a = ap.parse_args()

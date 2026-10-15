@@ -1,8 +1,8 @@
 <p align="center"><img src="docs/logo.svg" width="500" alt="xbox-boot-re"></p>
 
 The boot animation of the original Xbox — the glowing blob, the chamber
-around it, the logo that flies in at the end — reconstructed from the
-retail BIOS alone, and rebuilt from that reconstruction as a standalone
+around it, the logo that flies in at the end — reconstructed from a single
+BIOS image alone, and rebuilt from that reconstruction as a standalone
 renderer with a WebGPU front end.
 
 > [!NOTE]
@@ -60,10 +60,12 @@ inspecting the animation part by part plus a reinterpreted "Next Gen"
 rendering of the same choreography with ray-traced reflections, soft
 shadows, god rays and depth of field.
 
-Everything rests on one BIOS image: `bios_retail_4627.bin` (SHA-256
-`3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c`), a dump
-from the author's own hardware, decrypted with the MCPX key of the same
-console. No other BIOS version was used, and no name, structure or constant
+Everything rests on one BIOS image: `bios_complex_4627_retail.bin` (SHA-256
+`3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c`), the
+1 MB "Complex 4627 Retail (1.0)" image — a modified BIOS, not a stock
+dump — flashed on the author's own (modded) console and dumped from it,
+decrypted with the MCPX key of the same console. No other BIOS version
+was used, and no name, structure or constant
 was taken from memory or from any other documentation of the hardware —
 every statement has an address in the binary, a recorded run, or a
 third-party source behind it, listed in `docs/provenance.md`.

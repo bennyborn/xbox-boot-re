@@ -1,6 +1,8 @@
 # Rom: from the flash dump to the unpacked kernel
 
-How `bios_retail_4627.bin` becomes the kernel that runs at 0x80010000.
+How `bios_complex_4627_retail.bin` — the 1 MB "Complex 4627 Retail (1.0)" image,
+a modified BIOS, not a stock dump — becomes the kernel that runs at
+0x80010000.
 The tool for it: `tools/rom/unpack.py`, checked in Ghidra with
 `tools/ghidra/import_2bl.py` and `tools/ghidra/import_kernel.py`.
 All values below are also in `out/rom/unpack.json` of a run.

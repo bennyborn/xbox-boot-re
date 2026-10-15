@@ -41,6 +41,13 @@
            pointer-events: none; text-shadow: 0 0 3px #000; display: flex; flex-wrap: wrap; gap: 2px 12px; opacity: 0; transition: opacity .15s; }
   .hints > span { background: rgba(0,0,0,0.55); padding: 2px 6px; border-radius: 4px; }
   .hints kbd { font: 10.5px var(--mono); border: 1px solid rgba(255,255,255,0.25); border-bottom-width: 2px; border-radius: 3px; padding: 0 4px; color: #e8ecef; }
+  .gpuError { position: absolute; inset: 0; z-index: 5; display: flex; align-items: center; justify-content: center;
+              background: rgba(5,5,6,0.94); padding: 24px; text-align: center; }
+  .gpuError[hidden] { display: none; }
+  .gpuError-box { max-width: 460px; }
+  .gpuError-title { font-size: 18px; font-weight: 700; color: var(--warn); margin: 0 0 12px; }
+  .gpuError-body { color: var(--text); font-size: 13.5px; line-height: 1.55; margin: 8px 0; }
+  .gpuError-body a { color: var(--accent); }
   .hovertag { position: absolute; pointer-events: none; background: rgba(8,9,10,0.88); border: 1px solid var(--accent);
               border-radius: 4px; padding: 3px 8px; font-size: 12px; white-space: nowrap; z-index: 3; transform: translate(12px, 12px); }
   .hovertag small { color: var(--dim); margin-left: 6px; }
@@ -187,6 +194,13 @@
   <main class="stage" id="stage">
     <div class="screen-wrap" id="screenWrap">
       <canvas id="screen"></canvas>
+      <div class="gpuError" id="gpuError" hidden>
+        <div class="gpuError-box">
+          <div class="gpuError-title">⚠ This browser can't render the animation</div>
+          <p class="gpuError-body" id="gpuErrorBody"></p>
+          <p class="gpuError-body">See <a href="https://caniuse.com/webgpu" target="_blank" rel="noopener">caniuse.com/webgpu</a> for current browser support.</p>
+        </div>
+      </div>
       <div class="statusline" id="statusline"></div>
       <div class="hovertag" id="hovertag" hidden></div>
       <div class="hints" id="hints"></div>

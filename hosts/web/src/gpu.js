@@ -38,13 +38,18 @@ const BLIT = TRIANGLE + `
     return textureLoad(picture, vec2u(p.xy), 0);
 }`;
 
+// Distinguished from other failures so the page can show a reader-facing
+// explanation instead of a raw error (main.js).
+export class NoWebGpuSupport extends Error {}
+export class NoWebGpuAdapter extends Error {}
+
 export class Gpu {
     static async create(canvas) {
         if (!navigator.gpu)
-            throw new Error('this browser has no WebGPU');
+            throw new NoWebGpuSupport('this browser has no WebGPU');
         const adapter = await navigator.gpu.requestAdapter();
         if (!adapter)
-            throw new Error('no WebGPU adapter');
+            throw new NoWebGpuAdapter('no WebGPU adapter');
         // a picture as wide as a wide screen needs a surface twice as wide
         // (docs/web.md 11.7): as large as the adapter allows, not 8192
         const maxTextureDimension2D = adapter.limits.maxTextureDimension2D;

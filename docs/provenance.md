@@ -3,8 +3,10 @@
 Every statement of this project has exactly one of these origins. The tables
 grow with the milestones.
 
-The basis is `bios_retail_4627.bin`, a dump from the author's own hardware,
-decrypted with the MCPX key of the same console. BIOS and key stay local.
+The basis is `bios_complex_4627_retail.bin`, the 1 MB "Complex 4627 Retail (1.0)"
+image — a modified BIOS, not a stock dump — flashed on the author's own
+(modded) console and dumped from it, decrypted with the MCPX key of the
+same console. BIOS and key stay local.
 
 The data in `data/` is, in content, Microsoft's geometry, samples and
 tables. An extractor of our own takes it from the ROM. That it lies in the
